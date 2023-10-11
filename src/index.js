@@ -1,14 +1,37 @@
+import $ from "jquery";
+
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, Thumbs } from 'swiper/modules';
+import './js/utils/jquery.mask'
 import 'swiper/css';
 import 'swiper/css/bundle';
-// import 'swiper/modules/effect-fade';
 import './js/components/header';
 import './js/components/footer';
 import './js/pages/home';
 import './index.scss';
 
 
+if ($('input[type=tel]').length) {
+    $('input[type=tel]').mask('+7(999) 999-99-99');
+}
+function remToPx(remValue) {
+    // Получаем текущий базовый размер шрифта (font-size) из элемента <html>
+    var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    // Переводим значение из rem в px
+    var pxValue = remValue * htmlFontSize;
+
+    // Округляем значение до целых пикселей (по желанию)
+    return Math.round(pxValue) + 'px';
+}
+
+function countSlider(swip, info) {
+    $(info).find('.pagination-number--all').html('0'+swip.slides.length)
+    $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
+    swip.on('slideChange', function () {
+        $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
+    });
+}
 
 let home_second
 if(!$('.home-second-swiper').data('platform')) {
@@ -17,9 +40,14 @@ if(!$('.home-second-swiper').data('platform')) {
 if (screen.width < 769) {
     home_second = new Swiper('.home-second-swiper', {
         modules: [Navigation, Pagination, EffectFade],
-        speed: 1500, 
-        slidesPerView: 1,
-        spaceBetween: 30,
+        speed: 1500,
+        slidesPerView: 'auto',
+        spaceBetween: `${remToPx(2)}rem`,
+        breakpoints: {
+			769: {
+				spaceBetween: `${remToPx(1.5)}rem`,
+			},
+		},
     });
 } else {
     home_second = new Swiper('.home-second-swiper', {
@@ -31,7 +59,11 @@ if (screen.width < 769) {
         fadeEffect: {
             crossFade: true
         },
+        pagination: {
+            el: ".home-second-pagination",
+        },
     });
+    countSlider(home_second, '.home-second-pagination-number')
 }
 $(window).resize(function () {
     changeHomeSecond ()
@@ -43,9 +75,14 @@ function changeHomeSecond () {
             home_second.destroy();
             home_second = new Swiper('.home-second-swiper', {
                 modules: [Navigation, Pagination, EffectFade],
-                speed: 2000, 
-                slidesPerView: 1,
-                spaceBetween: 30,
+                speed: 2000,
+                slidesPerView: 'auto',
+                spaceBetween: `${remToPx(2)}rem`,
+                breakpoints: {
+                    769: {
+                        spaceBetween: `${remToPx(1.5)}rem`,
+                    },
+                },
             });
         }
     } else {
@@ -60,6 +97,9 @@ function changeHomeSecond () {
                 effect: "fade",
                 fadeEffect: {
                     crossFade: true
+                },
+                pagination: {
+                    el: ".home-second-pagination",
                 },
             });
         }
@@ -86,10 +126,14 @@ const home_programs_img = new Swiper('.home-programs--swiper-img', {
         slideShadows: false,
         scale: 1.12,
     },
+    pagination: {
+        el: ".home-programs-pagination",
+    },
     watchSlidesProgress: true,
     slideToClickedSlide: true,
     watchSlidesVisibility: true,
 });
+countSlider(home_programs_img, '.home-programs-pagination-number')
 const home_programs_info = new Swiper('.home-programs--swiper-text', {
     modules: [Navigation, Pagination, EffectFade, Thumbs],
     speed: 2000,
@@ -103,14 +147,22 @@ const home_programs_info = new Swiper('.home-programs--swiper-text', {
         swiper: home_programs_img,
     },
 });
-home_programs_img.update();
 
 const home_review_swiper = new Swiper('.home-review-swiper', {
     modules: [Navigation, Pagination, EffectFade, Thumbs],
     speed: 2000,
-    slidesPerView: 1,
-    spaceBetween: 300,
+    slidesPerView: 'auto',
+    spaceBetween: `${remToPx(1.5)}rem`,
+    pagination: {
+        el: ".home-review-pagination",
+    },
+    breakpoints: {
+        769: {
+            slidesPerView: 1,
+        },
+    },
 });
+countSlider(home_review_swiper, '.home-review-pagination-number')
 
 const home_command_swiper = new Swiper('.home-command-swiper', {
     modules: [Navigation, Pagination, EffectFade, Thumbs],

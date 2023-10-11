@@ -109,6 +109,38 @@
     }
 }
 
+.swiper-pagination {
+    &.swiper-pagination-bullets.swiper-pagination-horizontal {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    &.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+        width: 2rem;
+        height: 1rem;
+        background: #D9D9D980;
+        border-radius: 0;
+        opacity: 1;
+        transition: background 0.5s ease-in-out;
+    }
+    &.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: #292929;
+    }
+}
+
+.pagination-number {
+    display: flex;
+    width: fit-content;
+    position: relative;
+
+    &--all {
+        position: relative;
+        top: 2rem;
+    }
+}
+
 @media (max-width: 48em) {
     .h1-text {
         // font-size: 10rem;
@@ -162,6 +194,7 @@
         width: 32rem;
         height: 32rem;
         border: 0.3rem solid rgba(41, 41, 41, 0.20);
+        overflow: hidden;
     
         &:hover {
             .circle-btn--back {
@@ -188,6 +221,12 @@
                 }
             }
         }
+    }
+    .swiper-pagination {
+        display: none;
+    }
+    .pagination-number {
+        display: none;
     }
 }
 @media (min-width: 48.01em) {
