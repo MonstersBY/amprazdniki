@@ -1,3 +1,4 @@
+import $ from "jquery";
 if($('.baner').length) {
     setTimeout(() => {
         const main = $('.baner-slide--active')
