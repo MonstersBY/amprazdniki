@@ -1,553 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Главная</title>
-  </head>
-  <body>
-    <header class="header black">
-      <div class="container">
-        <div class="header-container">
-          <div class="header-logo white-logo">
-            <img src="./assets/images/icon/logo-white.svg" alt="">
-          </div>
-          <div class="header-logo black-logo">
-            <img src="./assets/images/icon/logo-black.svg" alt="">
-          </div>
-          <div class="header--box">
-            <div class="header-menu regular-4-text regular-3-text--mob">
-              <a class="header-menu--item active mobile">Главная</a>
-              <a class="header-menu--item">Наши программы</a>
-              <a class="header-menu--item">Еда на праздники</a>
-              <a class="header-menu--item">Костюмы</a>
-              <a class="header-menu--item">О нас</a>
-              <a class="header-menu--item">Блог</a>
-              <a class="header-menu--item">Контакты</a>
-            </div>
-            <div class="header-right">
-              <a class="header-phone regular-3-text regular-1-text--mob">+7 (999) 999-99-99</a>
-              <div class="header-socials">
-                <a href="" class="header-social instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8C0 3.58172 3.58172 0 8 0H20C24.4183 0 28 3.58172 28 8V20C28 24.4183 24.4183 28 20 28H8C3.58172 28 0 24.4183 0 20V8ZM21.4668 14.0002C21.4668 18.1239 18.1239 21.4668 14.0001 21.4668C9.8764 21.4668 6.53346 18.1239 6.53346 14.0002C6.53346 9.87644 9.8764 6.5335 14.0001 6.5335C18.1239 6.5335 21.4668 9.87644 21.4668 14.0002ZM21.4668 8.40016C22.4977 8.40016 23.3335 7.56443 23.3335 6.5335C23.3335 5.50256 22.4977 4.66683 21.4668 4.66683C20.4359 4.66683 19.6001 5.50256 19.6001 6.5335C19.6001 7.56443 20.4359 8.40016 21.4668 8.40016Z" fill="#292929"/>
-                  </svg>
-                </a>
-                <a href="" class="header-social telegram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 32 28" fill="none">
-                    <path d="M32 0.9919L26.9382 26.8343C26.9382 26.8343 26.23 28.6261 24.2845 27.7668L12.6056 18.6984L12.5514 18.6716C14.129 17.2371 26.3619 6.09851 26.8966 5.59361C27.7242 4.81166 27.2104 4.34614 26.2494 4.93683L8.17986 16.5578L1.20865 14.1824C1.20865 14.1824 0.111591 13.7872 0.0060511 12.9279C-0.100878 12.0672 1.24476 11.6017 1.24476 11.6017L29.6642 0.311208C29.6642 0.311208 32 -0.728115 32 0.9919Z" fill="#292929"/>
-                  </svg>
-                </a>
-                <a href="" class="header-social whatsapp">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path d="M23.9024 4.08333C21.2683 1.45833 17.7561 0 14.0488 0C6.34146 0 0.0975595 6.22222 0.0975595 13.9028C0.0975595 16.3333 0.780488 18.7639 1.95122 20.8056L0 28L7.41464 26.0556C9.46342 27.125 11.7073 27.7083 14.0488 27.7083C21.7561 27.7083 28 21.4861 28 13.8056C27.9024 10.2083 26.5366 6.70833 23.9024 4.08333ZM20.7805 18.8611C20.4878 19.6389 19.1219 20.4167 18.439 20.5139C17.8537 20.6111 17.0732 20.6111 16.2927 20.4167C15.8049 20.2222 15.122 20.0278 14.3415 19.6389C10.8293 18.1806 8.58537 14.6806 8.39025 14.3889C8.19512 14.1944 6.92683 12.5417 6.92683 10.7917C6.92683 9.04167 7.80488 8.26389 8.09756 7.875C8.39024 7.48611 8.78049 7.48611 9.07317 7.48611C9.26829 7.48611 9.56097 7.48611 9.75609 7.48611C9.95122 7.48611 10.2439 7.38889 10.5366 8.06944C10.8293 8.75 11.5122 10.5 11.6098 10.5972C11.7073 10.7917 11.7073 10.9861 11.6098 11.1806C11.5122 11.375 11.4146 11.5694 11.2195 11.7639C11.0244 11.9583 10.8293 12.25 10.7317 12.3472C10.5366 12.5417 10.3415 12.7361 10.5366 13.0278C10.7317 13.4167 11.4146 14.4861 12.4878 15.4583C13.8537 16.625 14.9268 17.0139 15.3171 17.2083C15.7073 17.4028 15.9024 17.3056 16.0976 17.1111C16.2927 16.9167 16.9756 16.1389 17.1707 15.75C17.3659 15.3611 17.6585 15.4583 17.9512 15.5556C18.2439 15.6528 20 16.5278 20.2927 16.7222C20.6829 16.9167 20.878 17.0139 20.9756 17.1111C21.0732 17.4028 21.0732 18.0833 20.7805 18.8611Z" fill="#292929"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="header-btn circle-btn regular-4-text regular-3-text--mob mobile">
-              <div class="circle-btn--back"></div>
-              <div class="circle-btn--text"><span class="header-btn--first">оставить</span><span class="header-btn--second">заявку</span></div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="header-burger mobile">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section class="baner">
-      <div class="container">
-        <div class="baner-slider">
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide baner-slide--active" data-color="#013E12" data-baner="white">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-          <div class="baner-slide">
-            <img src="./assets/images/baner/baner1.jpg" alt="">
-          </div>
-        </div>
-        <div class="baner-slider-main disabled">
-          <img src="./assets/images/baner/baner1.jpg" alt="">
-        </div>
-        <div class="baner-main h1-text">
-          <span class="baner-main--first">Детские</span><br>
-          <span class="baner-main--second">праздники</span>
-        </div>
-        <div class="baner-main-subtitle regular-3-text regular-3-text--mob">Организация <br> под ключ</div>
-        <div class="baner-btn circle-btn regular-4-text regular-3-text--mob">
-          <div class="circle-btn--back"></div>
-          <div class="circle-btn--text"><span class="baner-btn--first">оставить</span><span class="baner-btn--second">заявку</span></div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-            <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="baner-name regular-1-text"><span class="baner-name--first">Авторская студия праздников</span> <br><span class="baner-name--second">Анастасии Михайловой</span></div>
-      </div>
-    </section>
-    <section class="home-second">
-      <div class="container">
-        <div class="home-second-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide home-second-slide">
-              <div class="home-second-slide-left">
-                <div class="home-second-slide-left--img">
-                  <img src="./assets/images/home/second-left.jpg" alt="">
-                </div>
-                <div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо к вам!</div>
-              </div>
-              <div class="home-second-slide-center">
-                <div class="home-second-slide-center--img">
-                  <img src="./assets/images/home/second-center.jpg" alt="">
-                </div>
-                <div class="home-second-slide-center--text">
-                  <span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
-                  <strong class="h2-text">гастроли</strong>
-                </div>
-                <div class="home-second-slide-center--btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62" fill="none">
-                    <path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="home-second-slide-right">
-                <div class="home-second-slide-right--img">
-                  <img src="./assets/images/home/second-right.jpg" alt="">
-                </div>
-                <div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50 000</strong> руб</div>
-                <div class="home-second-slide-right--text regular-3-text">Цена</div>
-              </div>
-              <a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
-                <div class="circle-btn--back"></div>
-                <div class="circle-btn--text"><span class="home-second-slide-btn--first">обсудить</span><span class="home-second-slide-btn--second">мероприятие</span></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                  <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-            <div class="swiper-slide home-second-slide">
-              <div class="home-second-slide-left">
-                <div class="home-second-slide-left--img">
-                  <img src="./assets/images/home/second-left.jpg" alt="">
-                </div>
-                <div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо к вам!</div>
-              </div>
-              <div class="home-second-slide-center">
-                <div class="home-second-slide-center--img">
-                  <img src="./assets/images/home/second-center.jpg" alt="">
-                </div>
-                <div class="home-second-slide-center--text">
-                  <span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
-                  <strong class="h2-text">гастроли</strong>
-                </div>
-                <div class="home-second-slide-center--btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62" fill="none">
-                    <path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="home-second-slide-right">
-                <div class="home-second-slide-right--img">
-                  <img src="./assets/images/home/second-right.jpg" alt="">
-                </div>
-                <div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50 000</strong> руб</div>
-                <div class="home-second-slide-right--text regular-3-text">Цена</div>
-              </div>
-              <a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
-                <div class="circle-btn--back"></div>
-                <div class="circle-btn--text"><span class="home-second-slide-btn--first">обсудить</span><span class="home-second-slide-btn--second">мероприятие</span></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                  <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-            <div class="swiper-slide home-second-slide">
-              <div class="home-second-slide-left">
-                <div class="home-second-slide-left--img">
-                  <img src="./assets/images/home/second-left.jpg" alt="">
-                </div>
-                <div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо к вам!</div>
-              </div>
-              <div class="home-second-slide-center">
-                <div class="home-second-slide-center--img">
-                  <img src="./assets/images/home/second-center.jpg" alt="">
-                </div>
-                <div class="home-second-slide-center--text">
-                  <span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
-                  <strong class="h2-text">гастроли</strong>
-                </div>
-                <div class="home-second-slide-center--btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62" fill="none">
-                    <path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="home-second-slide-right">
-                <div class="home-second-slide-right--img">
-                  <img src="./assets/images/home/second-right.jpg" alt="">
-                </div>
-                <div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50 000</strong> руб</div>
-                <div class="home-second-slide-right--text regular-3-text">Цена</div>
-              </div>
-              <a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
-                <div class="circle-btn--back"></div>
-                <div class="circle-btn--text"><span class="home-second-slide-btn--first">обсудить</span><span class="home-second-slide-btn--second">мероприятие</span></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                  <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-            <div class="swiper-slide home-second-slide">
-              <div class="home-second-slide-left">
-                <div class="home-second-slide-left--img">
-                  <img src="./assets/images/home/second-left.jpg" alt="">
-                </div>
-                <div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо к вам!</div>
-              </div>
-              <div class="home-second-slide-center">
-                <div class="home-second-slide-center--img">
-                  <img src="./assets/images/home/second-center.jpg" alt="">
-                </div>
-                <div class="home-second-slide-center--text">
-                  <span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
-                  <strong class="h2-text">гастроли</strong>
-                </div>
-                <div class="home-second-slide-center--btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62" fill="none">
-                    <path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="home-second-slide-right">
-                <div class="home-second-slide-right--img">
-                  <img src="./assets/images/home/second-right.jpg" alt="">
-                </div>
-                <div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50 000</strong> руб</div>
-                <div class="home-second-slide-right--text regular-3-text">Цена</div>
-              </div>
-              <a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
-                <div class="circle-btn--back"></div>
-                <div class="circle-btn--text"><span class="home-second-slide-btn--first">обсудить</span><span class="home-second-slide-btn--second">мероприятие</span></div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                  <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="home-second-pagination swiper-pagination"></div>
-          <div class="home-second-pagination-number pagination-number regular-1-text">
-            <span class="pagination-number--current">01</span>
-            <span class="pagination-number--all">04</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="home-programs">
-      <div class="container">
-        <div class="home-programs--left">
-          <div class="home-programs--title h2-text">Наши <br> программы</div>
-          <div class="home-programs--swiper-text">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide home-programs-info">
-                <div class="home-programs-info--title h4-text">Супергерои</div>
-                <div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
-                <div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10 000</strong> руб</div>
-                <div class="home-programs-info--last regular-3-text ">Цена</div>
-              </div>
-              <div class="swiper-slide home-programs-info">
-                <div class="home-programs-info--title h4-text">Джунгли</div>
-                <div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
-                <div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10 000</strong> руб</div>
-                <div class="home-programs-info--last regular-3-text ">Цена</div>
-              </div>
-              <div class="swiper-slide home-programs-info">
-                <div class="home-programs-info--title h4-text">Тор</div>
-                <div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
-                <div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10 000</strong> руб</div>
-                <div class="home-programs-info--last regular-3-text ">Цена</div>
-              </div>
-              <div class="swiper-slide home-programs-info">
-                <div class="home-programs-info--title h4-text">Амазонка</div>
-                <div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
-                <div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10 000</strong> руб</div>
-                <div class="home-programs-info--last regular-3-text ">Цена</div>
-              </div>
-            </div>
-          </div>
-          <div class="home-programs-btn circle-btn regular-4-text regular-3-text--mob">
-            <div class="circle-btn--back"></div>
-            <div class="circle-btn--text"><span class="home-programs-btn--first">все</span><span class="home-programs-btn--second">программы</span></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-              <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="home-programs--right">
-          <div class="home-programs--swiper-img">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide home-programs-img">
-                <img src="./assets/images/home/program1.jpg" alt="">
-              </div>
-              <div class="swiper-slide home-programs-img">
-                <img src="./assets/images/home/program2.jpg" alt="">
-              </div>
-              <div class="swiper-slide home-programs-img">
-                <img src="./assets/images/home/program3.jpg" alt="">
-              </div>
-              <div class="swiper-slide home-programs-img">
-                <img src="./assets/images/home/program4.jpg" alt="">
-              </div>
-            </div>
-            <div class="home-programs-pagination swiper-pagination"></div>
-            <div class="home-programs-pagination-number pagination-number regular-1-text">
-              <span class="pagination-number--current">01</span>
-              <span class="pagination-number--all">04</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="home-review">
-      <div class="container">
-        <div class="home-review--title h2-text">Отзывы <br>о нас</div>
-        <div class="home-review-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide home-review-slide">
-              <div class="home-review-slide--box">
-                <div class="home-review-slide--left">
-                  <div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki</div>
-                  <div class="home-review-slide--title h4-text">Супергерои</div>
-                  <div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.</div>
-                  <div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
-                    <div class="home-review-slide--name">анонимно</div>
-                    <div class="home-review-slide--date">22.08.2023</div>
-                  </div>
-                </div>
-                <div class="home-review-slide--right">
-                  <div class="home-review-slide-img--big">
-                    <img src="./assets/images/home/program1.jpg" alt="">
-                  </div>
-                  <div class="home-review-slide-img--small">
-                    <img src="./assets/images/home/program4.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы действительно вложили душу”</div>
-            </div>
-            <div class="swiper-slide home-review-slide">
-              <div class="home-review-slide--box">
-                <div class="home-review-slide--left">
-                  <div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki</div>
-                  <div class="home-review-slide--title h4-text">Супергерои</div>
-                  <div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.</div>
-                  <div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
-                    <div class="home-review-slide--name">анонимно</div>
-                    <div class="home-review-slide--date">22.08.2023</div>
-                  </div>
-                </div>
-                <div class="home-review-slide--right">
-                  <div class="home-review-slide-img--big">
-                    <img src="./assets/images/home/program1.jpg" alt="">
-                  </div>
-                  <div class="home-review-slide-img--small">
-                    <img src="./assets/images/home/program4.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы действительно вложили душу”</div>
-            </div>
-            <div class="swiper-slide home-review-slide">
-              <div class="home-review-slide--box">
-                <div class="home-review-slide--left">
-                  <div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki</div>
-                  <div class="home-review-slide--title h4-text">Супергерои</div>
-                  <div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.</div>
-                  <div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
-                    <div class="home-review-slide--name">анонимно</div>
-                    <div class="home-review-slide--date">22.08.2023</div>
-                  </div>
-                </div>
-                <div class="home-review-slide--right">
-                  <div class="home-review-slide-img--big">
-                    <img src="./assets/images/home/program1.jpg" alt="">
-                  </div>
-                  <div class="home-review-slide-img--small">
-                    <img src="./assets/images/home/program4.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы действительно вложили душу”</div>
-            </div>
-            <div class="swiper-slide home-review-slide">
-              <div class="home-review-slide--box">
-                <div class="home-review-slide--left">
-                  <div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki</div>
-                  <div class="home-review-slide--title h4-text">Супергерои</div>
-                  <div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.</div>
-                  <div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
-                    <div class="home-review-slide--name">анонимно</div>
-                    <div class="home-review-slide--date">22.08.2023</div>
-                  </div>
-                </div>
-                <div class="home-review-slide--right">
-                  <div class="home-review-slide-img--big">
-                    <img src="./assets/images/home/program1.jpg" alt="">
-                  </div>
-                  <div class="home-review-slide-img--small">
-                    <img src="./assets/images/home/program4.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы действительно вложили душу”</div>
-            </div>
-          </div>
-          <div class="home-review-pagination swiper-pagination"></div>
-          <div class="home-review-pagination-number pagination-number regular-1-text">
-            <span class="pagination-number--current">01</span>
-            <span class="pagination-number--all">04</span>
-          </div>
-        </div>
-        <div class="home-review-btn circle-btn regular-4-text regular-3-text--mob">
-          <div class="circle-btn--back"></div>
-          <div class="circle-btn--text"><span class="home-review-btn--first">смотреть</span><span class="home-review-btn--second">все</span></div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-            <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-    <section class="home-command">
-      <div class="container">
-        <div class="home-command--title h2-text">Наша <br> команда</div>
-        <div class="home-command-btn circle-btn regular-4-text regular-3-text--mob">
-          <div class="circle-btn--back"></div>
-          <div class="circle-btn--text"><span class="home-command-btn--first">все</span><span class="home-command-btn--second">сотрудники</span></div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-            <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="home-command-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide home-command-slide">
-              <img src="./assets/images/home/home-command1.jpg" alt="">
-            </div>
-            <div class="swiper-slide home-command-slide">
-              <img src="./assets/images/home/home-command1.jpg" alt="">
-            </div>
-            <div class="swiper-slide home-command-slide">
-              <img src="./assets/images/home/home-command1.jpg" alt="">
-            </div>
-            <div class="swiper-slide home-command-slide">
-              <img src="./assets/images/home/home-command1.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="home-command-swiper--text">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide home-command--text">
-              <strong class="h4-text">Анастасия <br> Михайлова</strong>
-              <span class="regular-3-text">Босс #amprazdniki</span>
-            </div>
-            <div class="swiper-slide home-command--text">
-              <strong class="h4-text">Анастасия <br> Михайлова</strong>
-              <span class="regular-3-text">Босс #amprazdniki1</span>
-            </div>
-            <div class="swiper-slide home-command--text">
-              <strong class="h4-text">Анастасия <br> Михайлова</strong>
-              <span class="regular-3-text">Босс #amprazdniki2</span>
-            </div>
-            <div class="swiper-slide home-command--text">
-              <strong class="h4-text">Анастасия <br> Михайлова</strong>
-              <span class="regular-3-text">Босс #amprazdniki3</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="request">
-      <div class="container">
-        <div class="request--left">
-          <div class="request--left_text regular-2-text">Оставьте заявку, <br class="mobile"> и мы поможем организовать лучший праздник</div>
-          <form class="form">
-            <label class="form_item">
-              <input type="text" placeholder="ваше имя">
-            </label>
-            <label class="form_item">
-              <input type="tel" placeholder="+7 (999)-999-99-99">
-            </label>
-            <button class="request-btn circle-btn regular-4-text regular-3-text--mob">
-              <div class="circle-btn--back"></div>
-              <div class="circle-btn--text"><span class="request-btn--first">отправить</span><span class="request-btn--second">заявку</span></div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                <path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </form>
-        </div>
-        <div class="request--center">
-          <div class="request--center_top h1-text">нужен <br>праздник?</div>
-          <div class="request--img">
-            <img src="./assets/images/home/request.jpg" alt="">
-          </div>
-          <div class="request--center_bottom h1-text">обсудим<br>мероприятие?</div>
-        </div>
-        <div class="request--right">
-          <div class="request--icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <path d="M23.9104 36.9626L37.1792 0.0340109L47.5703 3.87074L31.4241 40L23.9104 36.9626ZM0.570309 36.9626L13.5193 0.0340089L24.2302 3.87074L8.08392 40L0.570309 36.9626Z" fill="#292929"/>
-            </svg>
-          </div>
-          <div class="request--right_box">
-            <div class="request--text regular-3-text regular-2-text--mob">Мы организуем очень масштабный и активный праздник с множеством гостей, деток, аниматоров и шоу-программ. Сейчас мы покажем, что можно добавить в любой праздник!</div>
-            <div class="request--name regular-2-text regular-3-text--mob">Анастасия <br>Михайлова</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="container">
 
-      </div>
-    </footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Главная</title>
+</head>
+
+<body>
+	<header class="header black">
+		<div class="container">
+			<div class="header-container">
+				<div class="header-logo white-logo">
+					<img src="./assets/images/icon/logo-white.svg" alt="">
+				</div>
+				<div class="header-logo black-logo">
+					<img src="./assets/images/icon/logo-black.svg" alt="">
+				</div>
+				<div class="header--box">
+					<div class="header-menu regular-4-text regular-3-text--mob">
+						<a class="header-menu--item active mobile">Главная</a>
+						<a class="header-menu--item">Наши программы</a>
+						<a class="header-menu--item">Еда на праздники</a>
+						<a class="header-menu--item">Костюмы</a>
+						<a class="header-menu--item">О нас</a>
+						<a class="header-menu--item">Блог</a>
+						<a class="header-menu--item">Контакты</a>
+					</div>
+					<div class="header-right">
+						<a class="header-phone regular-3-text regular-1-text--mob">+7 (999) 999-99-99</a>
+						<div class="header-socials">
+							<a href="" class="header-social instagram">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+									fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M0 8C0 3.58172 3.58172 0 8 0H20C24.4183 0 28 3.58172 28 8V20C28 24.4183 24.4183 28 20 28H8C3.58172 28 0 24.4183 0 20V8ZM21.4668 14.0002C21.4668 18.1239 18.1239 21.4668 14.0001 21.4668C9.8764 21.4668 6.53346 18.1239 6.53346 14.0002C6.53346 9.87644 9.8764 6.5335 14.0001 6.5335C18.1239 6.5335 21.4668 9.87644 21.4668 14.0002ZM21.4668 8.40016C22.4977 8.40016 23.3335 7.56443 23.3335 6.5335C23.3335 5.50256 22.4977 4.66683 21.4668 4.66683C20.4359 4.66683 19.6001 5.50256 19.6001 6.5335C19.6001 7.56443 20.4359 8.40016 21.4668 8.40016Z"
+										fill="#292929" />
+								</svg>
+							</a>
+							<a href="" class="header-social telegram">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 32 28"
+									fill="none">
+									<path
+										d="M32 0.9919L26.9382 26.8343C26.9382 26.8343 26.23 28.6261 24.2845 27.7668L12.6056 18.6984L12.5514 18.6716C14.129 17.2371 26.3619 6.09851 26.8966 5.59361C27.7242 4.81166 27.2104 4.34614 26.2494 4.93683L8.17986 16.5578L1.20865 14.1824C1.20865 14.1824 0.111591 13.7872 0.0060511 12.9279C-0.100878 12.0672 1.24476 11.6017 1.24476 11.6017L29.6642 0.311208C29.6642 0.311208 32 -0.728115 32 0.9919Z"
+										fill="#292929" />
+								</svg>
+							</a>
+							<a href="" class="header-social whatsapp">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+									fill="none">
+									<path
+										d="M23.9024 4.08333C21.2683 1.45833 17.7561 0 14.0488 0C6.34146 0 0.0975595 6.22222 0.0975595 13.9028C0.0975595 16.3333 0.780488 18.7639 1.95122 20.8056L0 28L7.41464 26.0556C9.46342 27.125 11.7073 27.7083 14.0488 27.7083C21.7561 27.7083 28 21.4861 28 13.8056C27.9024 10.2083 26.5366 6.70833 23.9024 4.08333ZM20.7805 18.8611C20.4878 19.6389 19.1219 20.4167 18.439 20.5139C17.8537 20.6111 17.0732 20.6111 16.2927 20.4167C15.8049 20.2222 15.122 20.0278 14.3415 19.6389C10.8293 18.1806 8.58537 14.6806 8.39025 14.3889C8.19512 14.1944 6.92683 12.5417 6.92683 10.7917C6.92683 9.04167 7.80488 8.26389 8.09756 7.875C8.39024 7.48611 8.78049 7.48611 9.07317 7.48611C9.26829 7.48611 9.56097 7.48611 9.75609 7.48611C9.95122 7.48611 10.2439 7.38889 10.5366 8.06944C10.8293 8.75 11.5122 10.5 11.6098 10.5972C11.7073 10.7917 11.7073 10.9861 11.6098 11.1806C11.5122 11.375 11.4146 11.5694 11.2195 11.7639C11.0244 11.9583 10.8293 12.25 10.7317 12.3472C10.5366 12.5417 10.3415 12.7361 10.5366 13.0278C10.7317 13.4167 11.4146 14.4861 12.4878 15.4583C13.8537 16.625 14.9268 17.0139 15.3171 17.2083C15.7073 17.4028 15.9024 17.3056 16.0976 17.1111C16.2927 16.9167 16.9756 16.1389 17.1707 15.75C17.3659 15.3611 17.6585 15.4583 17.9512 15.5556C18.2439 15.6528 20 16.5278 20.2927 16.7222C20.6829 16.9167 20.878 17.0139 20.9756 17.1111C21.0732 17.4028 21.0732 18.0833 20.7805 18.8611Z"
+										fill="#292929" />
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="header-btn circle-btn regular-4-text regular-3-text--mob mobile">
+						<div class="circle-btn--back"></div>
+						<div class="circle-btn--text"><span class="header-btn--first">оставить</span><span
+								class="header-btn--second">заявку</span></div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+							<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+				</div>
+				<div class="header-burger mobile">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="baner">
+		<div class="container">
+			<div class="baner-slider">
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide baner-slide--active" data-color="#013E12" data-baner="white">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+				<div class="baner-slide">
+					<img src="./assets/images/baner/baner1.jpg" alt="">
+				</div>
+			</div>
+			<div class="baner-slider-main disabled">
+				<img src="./assets/images/baner/baner1.jpg" alt="">
+			</div>
+			<div class="baner-main h1-text">
+				<span class="baner-main--first">Детские</span><br>
+				<span class="baner-main--second">праздники</span>
+			</div>
+			<div class="baner-main-subtitle regular-3-text regular-3-text--mob">Организация <br> под ключ</div>
+			<div class="baner-btn circle-btn regular-4-text regular-3-text--mob">
+				<div class="circle-btn--back"></div>
+				<div class="circle-btn--text"><span class="baner-btn--first">оставить</span><span
+						class="baner-btn--second">заявку</span></div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+					<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10"
+						stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+						stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+			<div class="baner-name regular-1-text"><span class="baner-name--first">Авторская студия праздников</span>
+				<br><span class="baner-name--second">Анастасии Михайловой</span></div>
+		</div>
+	</section>
+	<section class="home-second">
+		<div class="container">
+			<div class="home-second-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide home-second-slide">
+						<div class="home-second-slide-left">
+							<div class="home-second-slide-left--img">
+								<img src="./assets/images/home/second-left.jpg" alt="">
+							</div>
+							<div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в
+								любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо
+								к вам!</div>
+						</div>
+						<div class="home-second-slide-center">
+							<div class="home-second-slide-center--img">
+								<img src="./assets/images/home/second-center.jpg" alt="">
+							</div>
+							<div class="home-second-slide-center--text">
+								<span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
+								<strong class="h2-text">гастроли</strong>
+							</div>
+							<div class="home-second-slide-center--btn">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62"
+									fill="none">
+									<path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+						</div>
+						<div class="home-second-slide-right">
+							<div class="home-second-slide-right--img">
+								<img src="./assets/images/home/second-right.jpg" alt="">
+							</div>
+							<div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50
+									000</strong> руб</div>
+							<div class="home-second-slide-right--text regular-3-text">Цена</div>
+						</div>
+						<a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
+							<div class="circle-btn--back"></div>
+							<div class="circle-btn--text"><span
+									class="home-second-slide-btn--first">обсудить</span><span
+									class="home-second-slide-btn--second">мероприятие</span></div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37"
+								fill="none">
+								<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</a>
+					</div>
+					<div class="swiper-slide home-second-slide">
+						<div class="home-second-slide-left">
+							<div class="home-second-slide-left--img">
+								<img src="./assets/images/home/second-left.jpg" alt="">
+							</div>
+							<div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в
+								любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо
+								к вам!</div>
+						</div>
+						<div class="home-second-slide-center">
+							<div class="home-second-slide-center--img">
+								<img src="./assets/images/home/second-center.jpg" alt="">
+							</div>
+							<div class="home-second-slide-center--text">
+								<span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
+								<strong class="h2-text">гастроли</strong>
+							</div>
+							<div class="home-second-slide-center--btn">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62"
+									fill="none">
+									<path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+						</div>
+						<div class="home-second-slide-right">
+							<div class="home-second-slide-right--img">
+								<img src="./assets/images/home/second-right.jpg" alt="">
+							</div>
+							<div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50
+									000</strong> руб</div>
+							<div class="home-second-slide-right--text regular-3-text">Цена</div>
+						</div>
+						<a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
+							<div class="circle-btn--back"></div>
+							<div class="circle-btn--text"><span
+									class="home-second-slide-btn--first">обсудить</span><span
+									class="home-second-slide-btn--second">мероприятие</span></div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37"
+								fill="none">
+								<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</a>
+					</div>
+					<div class="swiper-slide home-second-slide">
+						<div class="home-second-slide-left">
+							<div class="home-second-slide-left--img">
+								<img src="./assets/images/home/second-left.jpg" alt="">
+							</div>
+							<div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в
+								любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо
+								к вам!</div>
+						</div>
+						<div class="home-second-slide-center">
+							<div class="home-second-slide-center--img">
+								<img src="./assets/images/home/second-center.jpg" alt="">
+							</div>
+							<div class="home-second-slide-center--text">
+								<span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
+								<strong class="h2-text">гастроли</strong>
+							</div>
+							<div class="home-second-slide-center--btn">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62"
+									fill="none">
+									<path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+						</div>
+						<div class="home-second-slide-right">
+							<div class="home-second-slide-right--img">
+								<img src="./assets/images/home/second-right.jpg" alt="">
+							</div>
+							<div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50
+									000</strong> руб</div>
+							<div class="home-second-slide-right--text regular-3-text">Цена</div>
+						</div>
+						<a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
+							<div class="circle-btn--back"></div>
+							<div class="circle-btn--text"><span
+									class="home-second-slide-btn--first">обсудить</span><span
+									class="home-second-slide-btn--second">мероприятие</span></div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37"
+								fill="none">
+								<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</a>
+					</div>
+					<div class="swiper-slide home-second-slide">
+						<div class="home-second-slide-left">
+							<div class="home-second-slide-left--img">
+								<img src="./assets/images/home/second-left.jpg" alt="">
+							</div>
+							<div class="home-second-slide-left--text regular-3-text regular-2-text--mob">мы приедем в
+								любую точку мира с любой программой, чтобы привезти незабываемый детский праздник прямо
+								к вам!</div>
+						</div>
+						<div class="home-second-slide-center">
+							<div class="home-second-slide-center--img">
+								<img src="./assets/images/home/second-center.jpg" alt="">
+							</div>
+							<div class="home-second-slide-center--text">
+								<span class="regular-3-text regular-3-text--mob">в любой точке мира</span>
+								<strong class="h2-text">гастроли</strong>
+							</div>
+							<div class="home-second-slide-center--btn">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="62" viewBox="0 0 35 62"
+									fill="none">
+									<path d="M34 31L1.52298 31" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M19.5931 45.4069L34 31L19.5931 16.5931" stroke="white" stroke-width="1.5"
+										stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+						</div>
+						<div class="home-second-slide-right">
+							<div class="home-second-slide-right--img">
+								<img src="./assets/images/home/second-right.jpg" alt="">
+							</div>
+							<div class="home-second-slide-right--price regular-1-text">от <strong class="h3-text">50
+									000</strong> руб</div>
+							<div class="home-second-slide-right--text regular-3-text">Цена</div>
+						</div>
+						<a class="home-second-slide-btn circle-btn regular-4-text regular-3-text--mob">
+							<div class="circle-btn--back"></div>
+							<div class="circle-btn--text"><span
+									class="home-second-slide-btn--first">обсудить</span><span
+									class="home-second-slide-btn--second">мероприятие</span></div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37"
+								fill="none">
+								<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+									stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="home-second-pagination swiper-pagination"></div>
+				<div class="home-second-pagination-number pagination-number regular-1-text">
+					<span class="pagination-number--current">01</span>
+					<span class="pagination-number--all">04</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-programs">
+		<div class="container">
+			<div class="home-programs--left">
+				<div class="home-programs--title h2-text">Наши <br> программы</div>
+				<div class="home-programs--swiper-text">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide home-programs-info">
+							<div class="home-programs-info--title h4-text">Супергерои</div>
+							<div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное
+								веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
+							<div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10
+									000</strong> руб</div>
+							<div class="home-programs-info--last regular-3-text ">Цена</div>
+						</div>
+						<div class="swiper-slide home-programs-info">
+							<div class="home-programs-info--title h4-text">Джунгли</div>
+							<div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное
+								веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
+							<div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10
+									000</strong> руб</div>
+							<div class="home-programs-info--last regular-3-text ">Цена</div>
+						</div>
+						<div class="swiper-slide home-programs-info">
+							<div class="home-programs-info--title h4-text">Тор</div>
+							<div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное
+								веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
+							<div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10
+									000</strong> руб</div>
+							<div class="home-programs-info--last regular-3-text ">Цена</div>
+						</div>
+						<div class="swiper-slide home-programs-info">
+							<div class="home-programs-info--title h4-text">Амазонка</div>
+							<div class="home-programs-info--text regular-4-text">Захватывающее приключение, полное
+								веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
+							<div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10
+									000</strong> руб</div>
+							<div class="home-programs-info--last regular-3-text ">Цена</div>
+						</div>
+					</div>
+				</div>
+				<div class="home-programs-btn circle-btn regular-4-text regular-3-text--mob">
+					<div class="circle-btn--back"></div>
+					<div class="circle-btn--text"><span class="home-programs-btn--first">все</span><span
+							class="home-programs-btn--second">программы</span></div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+						<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+							stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+			</div>
+			<div class="home-programs--right">
+				<div class="home-programs--swiper-img">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide home-programs-img">
+							<img src="./assets/images/home/program1.jpg" alt="">
+						</div>
+						<div class="swiper-slide home-programs-img">
+							<img src="./assets/images/home/program2.jpg" alt="">
+						</div>
+						<div class="swiper-slide home-programs-img">
+							<img src="./assets/images/home/program3.jpg" alt="">
+						</div>
+						<div class="swiper-slide home-programs-img">
+							<img src="./assets/images/home/program4.jpg" alt="">
+						</div>
+					</div>
+					<div class="home-programs-pagination swiper-pagination"></div>
+					<div class="home-programs-pagination-number pagination-number regular-1-text">
+						<span class="pagination-number--current">01</span>
+						<span class="pagination-number--all">04</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-holiday">
+		<div class="home-holiday__container container">
+			<div class="home-holiday__inner">
+				<div class="home-holiday__left">
+					<div class="home-holiday__title h2-text">Подбор праздника</div>
+					<div class="home-holiday__left-content">
+						<div class="home-holiday__content-item">
+							<div class="home-holiday__content-item--description regular-4-text">Кейтеринг с
+								угощениями
+								и не только сладостями, но и любимыми блюдами</div>
+							<div class="home-holiday__content-item--img">
+								<img src="assets/images/home/holiday-2.jpg" alt="">
+							</div>
+						</div>
+						<div class="home-holiday__left-text h4-text">Стилизуем подачу под тематику праздника</div>
+					</div>
+				</div>
+				<div class="home-holiday__right">
+					<div class="home-holiday__right-content">
+						<div class="home-holiday__content-item">
+							<div class="home-holiday__content-item--img">
+								<img src="assets/images/home/holiday-1.jpg" alt="">
+							</div>
+							<div class="home-holiday__content-item--description--right regular-4-text">Учитываем
+								возраст
+								ребенка, пол, психотип
+								и интересы</div>
+						</div>
+					</div>
+					<button class="home-holiday__btn circle-btn regular-4-text regular-3-text--mob">
+						<div class="circle-btn--back"></div>
+						<div class="circle-btn--text"><span class="home-second-slide-btn--first">Бесплатный</span><span
+								class="home-second-slide-btn--second">подбор</span></div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+							<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="home-holiday__hashtag">#amprazdniki</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-review">
+		<div class="container">
+			<div class="home-review--title h2-text">Отзывы <br>о нас</div>
+			<div class="home-review-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide home-review-slide">
+						<div class="home-review-slide--box">
+							<div class="home-review-slide--left">
+								<div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki
+								</div>
+								<div class="home-review-slide--title h4-text">Супергерои</div>
+								<div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день
+									для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто
+									невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.
+								</div>
+								<div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
+									<div class="home-review-slide--name">анонимно</div>
+									<div class="home-review-slide--date">22.08.2023</div>
+								</div>
+							</div>
+							<div class="home-review-slide--right">
+								<div class="home-review-slide-img--big">
+									<img src="./assets/images/home/program1.jpg" alt="">
+								</div>
+								<div class="home-review-slide-img--small">
+									<img src="./assets/images/home/program4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы
+							действительно вложили душу”</div>
+					</div>
+					<div class="swiper-slide home-review-slide">
+						<div class="home-review-slide--box">
+							<div class="home-review-slide--left">
+								<div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki
+								</div>
+								<div class="home-review-slide--title h4-text">Супергерои</div>
+								<div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день
+									для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто
+									невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.
+								</div>
+								<div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
+									<div class="home-review-slide--name">анонимно</div>
+									<div class="home-review-slide--date">22.08.2023</div>
+								</div>
+							</div>
+							<div class="home-review-slide--right">
+								<div class="home-review-slide-img--big">
+									<img src="./assets/images/home/program1.jpg" alt="">
+								</div>
+								<div class="home-review-slide-img--small">
+									<img src="./assets/images/home/program4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы
+							действительно вложили душу”</div>
+					</div>
+					<div class="swiper-slide home-review-slide">
+						<div class="home-review-slide--box">
+							<div class="home-review-slide--left">
+								<div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki
+								</div>
+								<div class="home-review-slide--title h4-text">Супергерои</div>
+								<div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день
+									для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто
+									невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.
+								</div>
+								<div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
+									<div class="home-review-slide--name">анонимно</div>
+									<div class="home-review-slide--date">22.08.2023</div>
+								</div>
+							</div>
+							<div class="home-review-slide--right">
+								<div class="home-review-slide-img--big">
+									<img src="./assets/images/home/program1.jpg" alt="">
+								</div>
+								<div class="home-review-slide-img--small">
+									<img src="./assets/images/home/program4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы
+							действительно вложили душу”</div>
+					</div>
+					<div class="swiper-slide home-review-slide">
+						<div class="home-review-slide--box">
+							<div class="home-review-slide--left">
+								<div class="home-review-slide--tag regular-4-text regular-3-text--mob">#amprazdniki
+								</div>
+								<div class="home-review-slide--title h4-text">Супергерои</div>
+								<div class="home-review-slide--text regular-5-text regular-2-text--mob">Отличный день
+									для детей! <br> Совсем недавно мы устроили детский праздник, и это было просто
+									невероятное событие! дети до сих пор вспоминают этот праздник с огромным восторгом.
+								</div>
+								<div class="home-review-slide--bottom regular-4-text regular-3-text--mob">
+									<div class="home-review-slide--name">анонимно</div>
+									<div class="home-review-slide--date">22.08.2023</div>
+								</div>
+							</div>
+							<div class="home-review-slide--right">
+								<div class="home-review-slide-img--big">
+									<img src="./assets/images/home/program1.jpg" alt="">
+								</div>
+								<div class="home-review-slide-img--small">
+									<img src="./assets/images/home/program4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="home-review-slide--small regular-2-text regular-3-text--mob">“Организаторы
+							действительно вложили душу”</div>
+					</div>
+				</div>
+				<div class="home-review-pagination swiper-pagination"></div>
+				<div class="home-review-pagination-number pagination-number regular-1-text">
+					<span class="pagination-number--current">01</span>
+					<span class="pagination-number--all">04</span>
+				</div>
+			</div>
+			<div class="home-review-btn circle-btn regular-4-text regular-3-text--mob">
+				<div class="circle-btn--back"></div>
+				<div class="circle-btn--text"><span class="home-review-btn--first">смотреть</span><span
+						class="home-review-btn--second">все</span></div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+					<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10"
+						stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+						stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+		</div>
+	</section>
+	<section class="home-command">
+		<div class="container">
+			<div class="home-command--title h2-text">Наша <br> команда</div>
+			<div class="home-command-btn circle-btn regular-4-text regular-3-text--mob">
+				<div class="circle-btn--back"></div>
+				<div class="circle-btn--text"><span class="home-command-btn--first">все</span><span
+						class="home-command-btn--second">сотрудники</span></div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+					<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10"
+						stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+						stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+			<div class="home-command-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide home-command-slide">
+						<img src="./assets/images/home/home-command1.jpg" alt="">
+					</div>
+					<div class="swiper-slide home-command-slide">
+						<img src="./assets/images/home/home-command1.jpg" alt="">
+					</div>
+					<div class="swiper-slide home-command-slide">
+						<img src="./assets/images/home/home-command1.jpg" alt="">
+					</div>
+					<div class="swiper-slide home-command-slide">
+						<img src="./assets/images/home/home-command1.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="home-command-swiper--text">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide home-command--text">
+						<strong class="h4-text">Анастасия <br> Михайлова</strong>
+						<span class="regular-3-text">Босс #amprazdniki</span>
+					</div>
+					<div class="swiper-slide home-command--text">
+						<strong class="h4-text">Анастасия <br> Михайлова</strong>
+						<span class="regular-3-text">Босс #amprazdniki1</span>
+					</div>
+					<div class="swiper-slide home-command--text">
+						<strong class="h4-text">Анастасия <br> Михайлова</strong>
+						<span class="regular-3-text">Босс #amprazdniki2</span>
+					</div>
+					<div class="swiper-slide home-command--text">
+						<strong class="h4-text">Анастасия <br> Михайлова</strong>
+						<span class="regular-3-text">Босс #amprazdniki3</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="request">
+		<div class="container">
+			<div class="request--left">
+				<div class="request--left_text regular-2-text">Оставьте заявку, <br class="mobile"> и мы поможем
+					организовать лучший праздник</div>
+				<form class="form">
+					<label class="form_item">
+						<input type="text" placeholder="ваше имя">
+					</label>
+					<label class="form_item">
+						<input type="tel" placeholder="+7 (999)-999-99-99">
+					</label>
+					<button class="request-btn circle-btn regular-4-text regular-3-text--mob">
+						<div class="circle-btn--back"></div>
+						<div class="circle-btn--text"><span class="request-btn--first">отправить</span><span
+								class="request-btn--second">заявку</span></div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+							<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+				</form>
+			</div>
+			<div class="request--center">
+				<div class="request--center_top h1-text">нужен <br>праздник?</div>
+				<div class="request--img">
+					<img src="./assets/images/home/request.jpg" alt="">
+				</div>
+				<div class="request--center_bottom h1-text">обсудим<br>мероприятие?</div>
+			</div>
+			<div class="request--right">
+				<div class="request--icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="40" viewBox="0 0 48 40" fill="none">
+						<path
+							d="M23.9104 36.9626L37.1792 0.0340109L47.5703 3.87074L31.4241 40L23.9104 36.9626ZM0.570309 36.9626L13.5193 0.0340089L24.2302 3.87074L8.08392 40L0.570309 36.9626Z"
+							fill="#292929" />
+					</svg>
+				</div>
+				<div class="request--right_box">
+					<div class="request--text regular-3-text regular-2-text--mob">Мы организуем очень масштабный и
+						активный праздник с множеством гостей, деток, аниматоров и шоу-программ. Сейчас мы покажем, что
+						можно добавить в любой праздник!</div>
+					<div class="request--name regular-2-text regular-3-text--mob">Анастасия <br>Михайлова</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__inner">
+				<div class="footer__main footer-main">
+					<ul class="footer-main__sidebar">
+						<li class="footer-main__sidebar-logo">
+							<img src="assets/images/icon/logo-black.svg" alt="">
+						</li>
+						<li class="footer-main__sidebar-social">
+							<a class="footer-main__sidebar-social--link" href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+									fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0ZM17.4031 10.3992C13.5371 10.3992 10.4031 13.5332 10.4031 17.3992V23.3992C10.4031 27.2652 13.5371 30.3992 17.4031 30.3992H23.4031C27.2691 30.3992 30.4031 27.2652 30.4031 23.3992V17.3992C30.4031 13.5332 27.2691 10.3992 23.4031 10.3992H17.4031ZM20.4039 25.5984C23.2758 25.5984 25.6039 23.2703 25.6039 20.3984C25.6039 17.5266 23.2758 15.1984 20.4039 15.1984C17.532 15.1984 15.2039 17.5266 15.2039 20.3984C15.2039 23.2703 17.532 25.5984 20.4039 25.5984ZM28.0039 13.9984C28.0039 14.6612 27.4666 15.1984 26.8039 15.1984C26.1412 15.1984 25.6039 14.6612 25.6039 13.9984C25.6039 13.3357 26.1412 12.7984 26.8039 12.7984C27.4666 12.7984 28.0039 13.3357 28.0039 13.9984Z"
+										fill="#292929" />
+								</svg>
+							</a>
+							<a class="footer-main__sidebar-social--link" href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+									fill="none">
+									<rect width="40" height="40" rx="20" fill="#292929" />
+									<path
+										d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+										fill="#F5F5F5" />
+								</svg>
+							</a>
+							<a class="footer-main__sidebar-social--link" href="#">
+								<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+									fill="none">
+									<rect width="40" height="40" rx="20" fill="#292929" />
+									<path
+										d="M27.9268 12.0625C25.9512 10.0937 23.3171 9 20.5366 9C14.7561 9 10.0732 13.6667 10.0732 19.4271C10.0732 21.25 10.5854 23.0729 11.4634 24.6042L10 30L15.561 28.5417C17.0976 29.3438 18.7805 29.7812 20.5366 29.7812C26.3171 29.7812 31 25.1146 31 19.3542C30.9268 16.6563 29.9024 14.0312 27.9268 12.0625ZM25.5854 23.1458C25.3659 23.7292 24.3415 24.3125 23.8293 24.3854C23.3902 24.4583 22.8049 24.4583 22.2195 24.3125C21.8537 24.1667 21.3415 24.0208 20.7561 23.7292C18.122 22.6354 16.439 20.0104 16.2927 19.7917C16.1463 19.6458 15.1951 18.4062 15.1951 17.0937C15.1951 15.7812 15.8537 15.1979 16.0732 14.9062C16.2927 14.6146 16.5854 14.6146 16.8049 14.6146C16.9512 14.6146 17.1707 14.6146 17.3171 14.6146C17.4634 14.6146 17.6829 14.5417 17.9024 15.0521C18.122 15.5625 18.6341 16.875 18.7073 16.9479C18.7805 17.0938 18.7805 17.2396 18.7073 17.3854C18.6341 17.5312 18.561 17.6771 18.4146 17.8229C18.2683 17.9687 18.1219 18.1875 18.0488 18.2604C17.9024 18.4062 17.7561 18.5521 17.9024 18.7708C18.0488 19.0625 18.561 19.8646 19.3659 20.5937C20.3902 21.4687 21.1951 21.7604 21.4878 21.9063C21.7805 22.0521 21.9268 21.9792 22.0732 21.8333C22.2195 21.6875 22.7317 21.1042 22.878 20.8125C23.0244 20.5208 23.2439 20.5938 23.4634 20.6667C23.6829 20.7396 25 21.3958 25.2195 21.5417C25.5122 21.6875 25.6585 21.7604 25.7317 21.8333C25.8049 22.0521 25.8049 22.5625 25.5854 23.1458Z"
+										fill="#F5F5F5" />
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="footer-main__title mobile">Меню</div>
+					<nav class="footer-main__nav">
+						<ul class="footer-main__nav-list">
+							<li class="footer-main__nav-list--item"><a href="#">все программы</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">программы для девочек</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">программы для мальчиков</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">еда на праздники</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">костюмы</a></li>
+						</ul>
+						<ul class="footer-main__nav-list">
+							<li class="footer-main__nav-list--item"><a href="#">календарные праздники</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">шоу-программы</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">квесты</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">мастер-классы</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">праздник под ключ</a></li>
+						</ul>
+						<ul class="footer-main__nav-list">
+							<li class="footer-main__nav-list--item"><a href="#">о нас</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">проекты</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">команда</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">блог</a></li>
+							<li class="footer-main__nav-list--item"><a href="#">контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+				<button class="footer__btn circle-btn regular-4-text regular-3-text--mob">
+					<div class="circle-btn--back"></div>
+					<div class="circle-btn--text"><span class="home-second-slide-btn--first">обсудить</span><span
+							class="home-second-slide-btn--second">праздник</span></div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+						<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3" stroke-miterlimit="10"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+							stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="footer__hashtag">#amprazdniki <span class="desktop">#amprazdniki</span></div>
+	</footer>
+	<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+</body>
+
 </html>
