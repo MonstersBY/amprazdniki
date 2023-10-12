@@ -127,6 +127,25 @@
 	&.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
 		background: #292929;
 	}
+
+	&.swiper-pagination-bullets.swiper-pagination-vertical {
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	&.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+		margin: 0;
+		width: 2rem;
+		height: 1rem;
+		background: #d9d9d980;
+		border-radius: 0;
+		opacity: 1;
+		transition: background 0.5s ease-in-out;
+	}
+	&.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background: #292929;
+	}
 }
 
 .pagination-number {

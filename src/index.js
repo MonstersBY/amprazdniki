@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, Thumbs } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, Thumbs, EffectCreative } from 'swiper/modules';
 import './js/utils/jquery.mask'
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -129,9 +129,6 @@ const home_programs_img = new Swiper('.home-programs--swiper-img', {
     pagination: {
         el: ".home-programs-pagination",
     },
-    watchSlidesProgress: true,
-    slideToClickedSlide: true,
-    watchSlidesVisibility: true,
 });
 countSlider(home_programs_img, '.home-programs-pagination-number')
 const home_programs_info = new Swiper('.home-programs--swiper-text', {
@@ -143,9 +140,9 @@ const home_programs_info = new Swiper('.home-programs--swiper-text', {
     fadeEffect: {
         crossFade: true
     },
-    thumbs: {
-        swiper: home_programs_img,
-    },
+});
+home_programs_img.on('slideChange', function () {
+    home_programs_info.slideTo(this.activeIndex, 2000)
 });
 
 const home_review_swiper = new Swiper('.home-review-swiper', {
@@ -165,21 +162,36 @@ const home_review_swiper = new Swiper('.home-review-swiper', {
 countSlider(home_review_swiper, '.home-review-pagination-number')
 
 const home_command_swiper = new Swiper('.home-command-swiper', {
-    modules: [Navigation, Pagination, EffectFade, Thumbs],
+    modules: [Navigation, Pagination, EffectFade, EffectCreative],
     direction: "vertical",
     speed: 2000,
     slidesPerView: 1,
     spaceBetween: 300,
-    watchSlidesProgress: true,
-    slideToClickedSlide: true,
-    watchSlidesVisibility: true,
+    pagination: {
+        el: ".home-command-pagination",
+    },
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        translate: [0, '-200%', 0],
+        rotate: [0, 0, 0],
+      },
+      next: {
+        translate: [0, 0, -1],
+        rotate: [0, 0, 0],
+      },
+    },
 });
+countSlider(home_command_swiper, '.home-command-pagination-number')
 const home_command_text = new Swiper('.home-command-swiper--text', {
     modules: [Navigation, Pagination, EffectFade, Thumbs],
     speed: 2000,
     slidesPerView: 1,
     spaceBetween: 300,
-    thumbs: {
-        swiper: home_command_swiper,
-    },
+});
+home_command_swiper.on('slideChange', function () {
+    home_command_text.slideTo(this.activeIndex, 2000)
+});
+$('.home-command--next').on('click', function () {
+    home_command_swiper.slideNext()
 });
