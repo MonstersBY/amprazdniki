@@ -1,10 +1,16 @@
 import $ from "jquery";
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, Thumbs, EffectCreative } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade, EffectCoverflow, Thumbs, EffectCreative, Mousewheel } from 'swiper/modules';
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 import './js/utils/jquery.mask'
 import 'swiper/css';
 import 'swiper/css/bundle';
+import 'swiper/css/mousewheel';
 import './js/components/header';
 import './js/components/footer';
 import './js/pages/home';
@@ -129,6 +135,16 @@ const home_programs_img = new Swiper('.home-programs--swiper-img', {
     pagination: {
         el: ".home-programs-pagination",
     },
+    breakpoints: {
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 1000,
+            modifier: 2,
+            slideShadows: false,
+            scale: 1.7,
+        },
+    },
 });
 countSlider(home_programs_img, '.home-programs-pagination-number')
 const home_programs_info = new Swiper('.home-programs--swiper-text', {
@@ -195,3 +211,57 @@ home_command_swiper.on('slideChange', function () {
 $('.home-command--next').on('click', function () {
     home_command_swiper.slideNext()
 });
+
+// const home_advantages_swiper = new Swiper('.home-advantages-swiper', {
+//     modules: [Navigation, Pagination, Mousewheel],
+//     direction: "vertical",
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     mousewheel: true,
+//     mousewheel: {
+//         eventsTarget: '.home-advantages',
+//         releaseOnEdges: true,
+//         ForceToAxis: true,
+//     },
+//     on: {
+//         slideChangeTransitionStart: function (swiper) {
+//             if ((swiper.activeIndex == 0) || (swiper.activeIndex == swiper.slides.length - 1)) {
+//                 centeredBlock(0);
+//             } else {
+//                 centeredBlock(500);
+//             }
+//         }
+//     },
+// });
+// function centeredBlock(speed) {
+//     $('html, body').animate({
+//         scrollTop: $('.home-advantages').offset().top
+//     }, speed);
+// }
+// let skewSetter = gsap.quickTo(".home-advantages-slide", "skewY")
+
+// ScrollTrigger.create({
+//     wrapper: ".home-advantages-swiper",
+//     content: ".home-advantages-wrapper",
+//     smooth: 2,
+//     speed: 3,
+//     effects: true,
+//     onUpdate: self => skewSetter(0),
+//     onStop: () => skewSetter(0)
+// });
+
+// ScrollTrigger.create({
+//     trigger: '.home-holiday',
+//     start: "top top", 
+//     pin: true, 
+//     pinSpacing: false 
+// });
+
+// gsap.utils.toArray(".home-advantages").forEach((panel, i) => {
+//     ScrollTrigger.create({
+//       trigger: panel,
+//       start: "top top", 
+//       pin: true, 
+//       pinSpacing: false 
+//     });
+// });
