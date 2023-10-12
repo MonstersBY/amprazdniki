@@ -260,8 +260,53 @@ $('.home-command--next').on('click', function () {
 // gsap.utils.toArray(".home-advantages").forEach((panel, i) => {
 //     ScrollTrigger.create({
 //       trigger: panel,
-//       start: "top top", 
+//       start: "top top",
 //       pin: true, 
 //       pinSpacing: false 
 //     });
 // });
+if ($('.home-advantages').length) {
+    let panels = document.querySelector('.home-advantages-wrapper');
+    let sections = gsap.utils.toArray(".home-advantages-slide");
+
+    gsap.from(panels, {
+        scrollTrigger: {
+            trigger: ".home-advantages",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+            start: "top top",
+            end: "+=200%"
+        },
+        // scaleY: 0, 
+        transformOrigin: "center top", 
+        ease: "none"
+    });
+
+    sections.forEach((eachPanel, index) => {
+	
+        // let realIndex = (index + 1);
+    
+        // ScrollTrigger.create({
+        //     scroller: panels,
+        //     trigger: eachPanel,
+        //     start: "top 50%",
+        //     end: "top bottom",  
+        //     onLeave: function() {
+        //         eachPanel.classList.add('active');
+        //     },
+        //     onLeaveBack: function() {
+        //         eachPanel.classList.remove('active');
+        //     },  
+    
+        // });
+        ScrollTrigger.create({
+            trigger: eachPanel,
+            toggleClass: "active",
+            start: "top 90%",
+            end:"top 10%",
+            // markers:true
+        })
+    
+    });
+}
