@@ -160,13 +160,6 @@
 }
 // Отступ для main, чтобы был отступ от фиксированной шапки(Kie6er)
 main {
-	padding-top: 6.7rem;
-	overflow: hidden;
-}
-
-// Надо убрать после того как сверстали мобилку страницы(Kie6er)
-
-footer {
 	overflow: hidden;
 }
 
@@ -256,10 +249,6 @@ footer {
 	}
 	.pagination-number {
 		display: none;
-	}
-
-	main {
-		padding-top: 10rem;
 	}
 }
 @media (min-width: 48.01em) {
