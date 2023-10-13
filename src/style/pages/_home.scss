@@ -553,20 +553,36 @@
             background: #D77;
             color: #FFF;
             margin-left: 58rem;
+
+			.home-advantages-slide--subtitle, .home-advantages-slide--text {
+				color: rgba(255, 255, 255, 0.80);
+			}
         }
         &:nth-child(2) {
             background: #FFF;
             margin-left: 0rem;
+
+			.home-advantages-slide--subtitle, .home-advantages-slide--text {
+				color: rgba(41, 41, 41, 0.50);
+			}
         }
         &:nth-child(3) {
             background: #B684B3;
             color: #FFF;
             margin-right: 58rem;
+
+			.home-advantages-slide--subtitle, .home-advantages-slide--text {
+				color: rgba(255, 255, 255, 0.80);
+			}
         }
         &:nth-child(4) {
             background: #E08AA4;
             color: #FFF;
             margin-left: 58rem;
+
+			.home-advantages-slide--subtitle, .home-advantages-slide--text {
+				color: rgba(255, 255, 255, 0.80);
+			}
         }
 
         padding: 3.2rem;

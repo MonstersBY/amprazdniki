@@ -66,6 +66,15 @@
         gap: 2.4rem;
     }
     &-social {
+        height: 2.8rem;
+        span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 70%;
+            text-transform: uppercase;
+        }
         &.instagram {
             svg {
                 width: 2.8rem;
@@ -204,6 +213,12 @@
             align-items: center;
             background: #292929;
             border-radius: 50%;
+
+            span {
+                font-size: 3.2rem;
+                color: #FFF;
+                height: 3rem;
+            }
 
             &.instagram {
                 svg {
