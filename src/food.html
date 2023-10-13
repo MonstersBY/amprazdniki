@@ -142,7 +142,8 @@
 							жизнь!
 						</div>
 					</div>
-					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile">
+					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile"
+						data-modal="food">
 						<div class="circle-btn--back"></div>
 						<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 								class="home-second-slide-btn--second">больше</span></div>
@@ -154,7 +155,7 @@
 						</svg>
 					</button>
 				</div>
-				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop">
+				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop" data-modal="food">
 					<div class="circle-btn--back"></div>
 					<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 							class="home-second-slide-btn--second">больше</span></div>
@@ -187,7 +188,8 @@
 							орехов и сухофруктов
 						</div>
 					</div>
-					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile">
+					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile"
+						data-modal="food">
 						<div class="circle-btn--back"></div>
 						<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 								class="home-second-slide-btn--second">больше</span></div>
@@ -199,7 +201,7 @@
 						</svg>
 					</button>
 				</div>
-				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop">
+				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop" data-modal="food">
 					<div class="circle-btn--back"></div>
 					<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 							class="home-second-slide-btn--second">больше</span></div>
@@ -232,7 +234,8 @@
 							там, где его не
 						</div>
 					</div>
-					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile">
+					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile"
+						data-modal="food">
 						<div class="circle-btn--back"></div>
 						<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 								class="home-second-slide-btn--second">больше</span></div>
@@ -244,7 +247,7 @@
 						</svg>
 					</button>
 				</div>
-				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop">
+				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop" data-modal="food">
 					<div class="circle-btn--back"></div>
 					<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 							class="home-second-slide-btn--second">больше</span></div>
@@ -275,7 +278,8 @@
 						<div class="food-item-right__description regular-5-text">эффектная подача и сервировка
 							сладкого стола, море вкусных и полезных сладостей для детей разного возраста</div>
 					</div>
-					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile">
+					<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob mobile"
+						data-modal="food">
 						<div class="circle-btn--back"></div>
 						<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 								class="home-second-slide-btn--second">больше</span></div>
@@ -287,7 +291,7 @@
 						</svg>
 					</button>
 				</div>
-				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop">
+				<button class="food-item__btn circle-btn regular-4-text regular-3-text--mob desktop" data-modal="food">
 					<div class="circle-btn--back"></div>
 					<div class="circle-btn--text"><span class="home-second-slide-btn--first">узнать</span><span
 							class="home-second-slide-btn--second">больше</span></div>
@@ -350,6 +354,75 @@
 			</div>
 		</div>
 	</section>
+	<div class="food-modal modal">
+		<div class="modal-back"></div>
+		<div class="modal-wrapper">
+			<div class="modal-exit">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<path d="M21 3L3 21" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"
+						stroke-linejoin="round" />
+					<path d="M3 3L21 21" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"
+						stroke-linejoin="round" />
+				</svg>
+			</div>
+			<div class="food-modal__content modal-content">
+				<div class="food-modal__wrapper">
+					<div class="food-modal__left">
+						<div class="food-modal__title h4-text mobile">торты</div>
+						<div class="food-modal__img">
+							<img src="assets/images/food/food-modal.png" alt="">
+						</div>
+					</div>
+					<div class="food-modal__right">
+						<div class="food-modal__title h4-text desktop">торты</div>
+						<ul class="food-modal__list">
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">01</div>
+								<div class="food-modal__list-item--text">Выбирайте — классический или фантазийный
+									рецепт торта.</div>
+							</li>
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">02</div>
+								<div class="food-modal__list-item--text">Тематический дизайн сладкого стола или
+									кэнди-бара.</div>
+							</li>
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">03</div>
+								<div class="food-modal__list-item--text">Выбор начинок — 15 разных вкусов.</div>
+							</li>
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">04</div>
+								<div class="food-modal__list-item--text">Количество ярусов — от 1 до бесконечности.
+								</div>
+							</li>
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">05</div>
+								<div class="food-modal__list-item--text">Украсим свежими ягодами и фруктами — вкусно
+									и полезно.</div>
+							</li>
+							<li class="food-modal__list-item">
+								<div class="food-modal__list-item--num">06</div>
+								<div class="food-modal__list-item--text">Можем украсить узором и сделать
+									поздравительную надпись.</div>
+							</li>
+						</ul>
+						<div class="food-modal__price">от <span>9 000</span> руб</div>
+					</div>
+					<button class="food-modal__btn circle-btn regular-4-text regular-3-text--mob">
+						<div class="circle-btn--back"></div>
+						<div class="circle-btn--text"><span class="home-second-slide-btn--first">Получить</span><span
+								class="home-second-slide-btn--second">расчёт</span></div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+							<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M36 31.6983L36 1.74414L6.04583 1.74414" stroke="#292929" stroke-width="3"
+								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<footer class="footer">
 		<div class="footer__container container">
 			<div class="footer__inner">
