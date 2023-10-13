@@ -1,4 +1,17 @@
 import $ from "jquery";
+
+
+function remToPx(remValue) {
+    // Получаем текущий базовый размер шрифта (font-size) из элемента <html>
+    var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    // Переводим значение из rem в px
+    var pxValue = remValue * htmlFontSize;
+
+    // Округляем значение до целых пикселей (по желанию)
+    return Math.round(pxValue) + 'px';
+}
+
 if($('.baner').length) {
     setTimeout(() => {
         const main = $('.baner-slide--active')
@@ -21,4 +34,43 @@ if($('.baner').length) {
             }, 250)
         }, 2000)
     }, 3000)
+
+    $(document).ready(function(){
+        if (screen.width > 769) {
+            const slides = [];
+            $('.home-advantages-slide').each(function (i) {
+                const windowHeight = $(window).height();
+                const _this = $(this);
+                const height = _this.height();
+                // console.log(`${i}. position: ${_this.position().top}; offset: ${_this.offset().top}`);
+                // const positionTop = _this.position().top - windowHeight * 0.6 - Number(remToPx(20 * i).slice(0, -2));
+                const positionTop = _this.offset().top - windowHeight * 0.6 - Number(remToPx(20 * i).slice(0, -2));
+                const positionBottom = positionTop + height * 1.13 + Number(remToPx(20).slice(0, -2));
+                slides.push({el: _this, positionTop, positionBottom});
+            });
+        
+        
+            const translateAnim = (scroll) => {
+                // Добавил проверку (i === slides.length - 1) чтобы последний блок не улетал вверх
+                slides.forEach((item, i) => {
+                    // console.log(`${i}. top: ${item.positionTop}, bottom: ${item.positionBottom}, scroll: ${scroll}`);
+                    if (scroll > item.positionTop && (scroll <= item.positionBottom || i === slides.length - 1)) {
+                        item.el.css('transform', `translateY(${-20 * i}rem)`);
+                    } else if (scroll > item.positionBottom && i !== slides.length - 1) {
+                        item.el.css('transform', `translateY(calc(-100vh - ${20 * i}rem))`);
+                    } else {
+                        item.el.css('transform', 'translateY(100vh)');
+                    }
+                });
+            }
+            translateAnim($(document).scrollTop());
+        
+            const wrapper = $('.home-advantages-wrapper');
+            wrapper.height(wrapper.height() - slides.length * Number(remToPx(20).slice(0, -2)));
+        
+            $(document).scroll(function () {
+                translateAnim($(this).scrollTop());
+            });
+        }
+    })
 }

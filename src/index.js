@@ -16,297 +16,294 @@ import './js/components/footer';
 import './js/pages/home';
 import './index.scss';
 
-
-if ($('input[type=tel]').length) {
-    $('input[type=tel]').mask('+7(999) 999-99-99');
-}
-function remToPx(remValue) {
-    // Получаем текущий базовый размер шрифта (font-size) из элемента <html>
-    var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-    // Переводим значение из rem в px
-    var pxValue = remValue * htmlFontSize;
-
-    // Округляем значение до целых пикселей (по желанию)
-    return Math.round(pxValue) + 'px';
-}
-
-function countSlider(swip, info) {
-    $(info).find('.pagination-number--all').html('0'+swip.slides.length)
-    $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
-    swip.on('slideChange', function () {
+$(document).ready(function(){
+    if ($('input[type=tel]').length) {
+        $('input[type=tel]').mask('+7(999) 999-99-99');
+    }
+    function remToPx(remValue) {
+        // Получаем текущий базовый размер шрифта (font-size) из элемента <html>
+        var htmlFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    
+        // Переводим значение из rem в px
+        var pxValue = remValue * htmlFontSize;
+    
+        // Округляем значение до целых пикселей (по желанию)
+        return Math.round(pxValue) + 'px';
+    }
+    
+    function countSlider(swip, info) {
+        $(info).find('.pagination-number--all').html('0'+swip.slides.length)
         $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
+        swip.on('slideChange', function () {
+            $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
+        });
+    }
+    
+    let home_second
+    if(!$('.home-second-swiper').data('platform')) {
+        screen.width < 769 ? $('.home-second-swiper').data('platform', 'mobile') : $('.home-second-swiper').data('platform', 'desktop')
+    }
+    if (screen.width < 769) {
+        home_second = new Swiper('.home-second-swiper', {
+            modules: [Navigation, Pagination, EffectFade],
+            speed: 1500,
+            slidesPerView: 'auto',
+            spaceBetween: `${remToPx(2)}rem`,
+            breakpoints: {
+                769: {
+                    spaceBetween: `${remToPx(1.5)}rem`,
+                },
+            },
+        });
+    } else {
+        home_second = new Swiper('.home-second-swiper', {
+            modules: [Navigation, Pagination, EffectFade],
+            speed: 1500, 
+            slidesPerView: 1,
+            spaceBetween: 30,
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: ".home-second-pagination",
+            },
+        });
+        countSlider(home_second, '.home-second-pagination-number')
+    }
+    $(window).resize(function () {
+        changeHomeSecond ()
     });
-}
-
-let home_second
-if(!$('.home-second-swiper').data('platform')) {
-    screen.width < 769 ? $('.home-second-swiper').data('platform', 'mobile') : $('.home-second-swiper').data('platform', 'desktop')
-}
-if (screen.width < 769) {
-    home_second = new Swiper('.home-second-swiper', {
-        modules: [Navigation, Pagination, EffectFade],
-        speed: 1500,
+    function changeHomeSecond () {
+        if (screen.width < 769) {
+            if($('.home-second-swiper').data('platform') == 'desktop') {
+                $('.home-second-swiper').data('platform', 'mobile')
+                home_second.destroy();
+                home_second = new Swiper('.home-second-swiper', {
+                    modules: [Navigation, Pagination, EffectFade],
+                    speed: 2000,
+                    slidesPerView: 'auto',
+                    spaceBetween: `${remToPx(2)}rem`,
+                    breakpoints: {
+                        769: {
+                            spaceBetween: `${remToPx(1.5)}rem`,
+                        },
+                    },
+                });
+            }
+        } else {
+            if($('.home-second-swiper').data('platform') == 'mobile') {
+                $('.home-second-swiper').data('platform', 'desktop')
+                home_second.destroy();
+                home_second = new Swiper('.home-second-swiper', {
+                    modules: [Navigation, Pagination, EffectFade],
+                    speed: 2000, 
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    effect: "fade",
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    pagination: {
+                        el: ".home-second-pagination",
+                    },
+                });
+            }
+        }
+    }
+    
+    $('.home-second-slide-center--btn').on("click", function (e) {
+        e.preventDefault();
+        home_second.slideNext()
+    });
+    
+    
+    const home_programs_img = new Swiper('.home-programs--swiper-img', {
+        modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
+        speed: 2000, 
         slidesPerView: 'auto',
-        spaceBetween: `${remToPx(2)}rem`,
+        centeredSlides: true,
+        effect: "coverflow",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 3,
+            slideShadows: false,
+            scale: 1.12,
+        },
+        pagination: {
+            el: ".home-programs-pagination",
+        },
         breakpoints: {
-			769: {
-				spaceBetween: `${remToPx(1.5)}rem`,
-			},
-		},
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 1000,
+                modifier: 2,
+                slideShadows: false,
+                scale: 1.7,
+            },
+        },
     });
-} else {
-    home_second = new Swiper('.home-second-swiper', {
-        modules: [Navigation, Pagination, EffectFade],
-        speed: 1500, 
+    countSlider(home_programs_img, '.home-programs-pagination-number')
+    const home_programs_info = new Swiper('.home-programs--swiper-text', {
+        modules: [Navigation, Pagination, EffectFade, Thumbs],
+        speed: 2000,
         slidesPerView: 1,
         spaceBetween: 30,
         effect: "fade",
         fadeEffect: {
             crossFade: true
         },
+    });
+    home_programs_img.on('slideChange', function () {
+        home_programs_info.slideTo(this.activeIndex, 2000)
+    });
+    
+    const home_review_swiper = new Swiper('.home-review-swiper', {
+        modules: [Navigation, Pagination, EffectFade, Thumbs],
+        speed: 2000,
+        slidesPerView: 'auto',
+        spaceBetween: `${remToPx(1.5)}rem`,
         pagination: {
-            el: ".home-second-pagination",
+            el: ".home-review-pagination",
+        },
+        breakpoints: {
+            769: {
+                slidesPerView: 1,
+            },
         },
     });
-    countSlider(home_second, '.home-second-pagination-number')
-}
-$(window).resize(function () {
-    changeHomeSecond ()
-});
-function changeHomeSecond () {
-    if (screen.width < 769) {
-        if($('.home-second-swiper').data('platform') == 'desktop') {
-            $('.home-second-swiper').data('platform', 'mobile')
-            home_second.destroy();
-            home_second = new Swiper('.home-second-swiper', {
-                modules: [Navigation, Pagination, EffectFade],
-                speed: 2000,
-                slidesPerView: 'auto',
-                spaceBetween: `${remToPx(2)}rem`,
-                breakpoints: {
-                    769: {
-                        spaceBetween: `${remToPx(1.5)}rem`,
+    countSlider(home_review_swiper, '.home-review-pagination-number')
+    
+    $('.home-command-slide').each(function (i) {
+        (i+1)%2 ? $(this).data('rot', 30) : $(this).data('rot', -30)
+    })
+    let home_command_swiper
+    function mainCommandSwiper() {
+        if (screen.width < 769) {
+            if($('.home-command-swiper').data('platform') == 'desktop') {
+                $('.home-second-swiper').data('platform', 'mobile')
+                home_second.destroy();
+                home_command_swiper = new Swiper('.home-command-swiper', {
+                    modules: [Navigation, Pagination, EffectFade, EffectCreative],
+                    speed: 2000,
+                    slidesPerView: 1,
+                    spaceBetween: 300,
+                    pagination: {
+                        el: ".home-command-pagination",
                     },
-                },
-            });
-        }
-    } else {
-        if($('.home-second-swiper').data('platform') == 'mobile') {
-            $('.home-second-swiper').data('platform', 'desktop')
-            home_second.destroy();
-            home_second = new Swiper('.home-second-swiper', {
-                modules: [Navigation, Pagination, EffectFade],
-                speed: 2000, 
-                slidesPerView: 1,
-                spaceBetween: 30,
-                effect: "fade",
-                fadeEffect: {
-                    crossFade: true
-                },
-                pagination: {
-                    el: ".home-second-pagination",
-                },
-            });
+                });
+            }
+        } else {
+            if($('.home-command-swiper').data('platform') == 'mobile') {
+                $('.home-second-swiper').data('platform', 'desktop')
+                home_second.destroy();
+                home_command_swiper = new Swiper('.home-command-swiper', {
+                    modules: [Navigation, Pagination, EffectFade, EffectCreative],
+                    direction: "vertical",
+                    speed: 2000,
+                    slidesPerView: 1,
+                    spaceBetween: 300,
+                    pagination: {
+                        el: ".home-command-pagination",
+                    },
+                    effect: "creative",
+                    creativeEffect: {
+                        prev: {
+                          translate: [0, '-200%', 0],
+                          rotate: [0, 0, 0],
+                        },
+                        next: {
+                          translate: [0, 0, -1],
+                          rotate: [0, 0, 0],
+                        },
+                    },
+                });
+            }
         }
     }
-}
-
-$('.home-second-slide-center--btn').on("click", function (e) {
-    e.preventDefault();
-    home_second.slideNext()
-});
-
-
-const home_programs_img = new Swiper('.home-programs--swiper-img', {
-    modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
-    speed: 2000, 
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    effect: "coverflow",
-    coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 300,
-        modifier: 3,
-        slideShadows: false,
-        scale: 1.12,
-    },
-    pagination: {
-        el: ".home-programs-pagination",
-    },
-    breakpoints: {
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 1000,
-            modifier: 2,
-            slideShadows: false,
-            scale: 1.7,
-        },
-    },
-});
-countSlider(home_programs_img, '.home-programs-pagination-number')
-const home_programs_info = new Swiper('.home-programs--swiper-text', {
-    modules: [Navigation, Pagination, EffectFade, Thumbs],
-    speed: 2000,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true
-    },
-});
-home_programs_img.on('slideChange', function () {
-    home_programs_info.slideTo(this.activeIndex, 2000)
-});
-
-const home_review_swiper = new Swiper('.home-review-swiper', {
-    modules: [Navigation, Pagination, EffectFade, Thumbs],
-    speed: 2000,
-    slidesPerView: 'auto',
-    spaceBetween: `${remToPx(1.5)}rem`,
-    pagination: {
-        el: ".home-review-pagination",
-    },
-    breakpoints: {
-        769: {
+    if(!$('.home-command-swiper').data('platform')) {
+        screen.width < 769 ? $('.home-second-swiper').data('platform', 'mobile') : $('.home-second-swiper').data('platform', 'desktop')
+    }
+    mainCommandSwiper()
+    if (screen.width < 769) {
+        home_command_swiper = new Swiper('.home-command-swiper', {
+            modules: [Navigation, Pagination, EffectFade, EffectCreative],
+            speed: 2000,
             slidesPerView: 1,
-        },
-    },
-});
-countSlider(home_review_swiper, '.home-review-pagination-number')
+            spaceBetween: 300,
+            pagination: {
+                el: ".home-command-pagination",
+            },
+        });
+    } else {
+        home_command_swiper = new Swiper('.home-command-swiper', {
+            modules: [Navigation, Pagination, EffectFade, EffectCreative],
+            direction: "vertical",
+            speed: 2000,
+            slidesPerView: 1,
+            spaceBetween: 300,
+            pagination: {
+                el: ".home-command-pagination",
+            },
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                  translate: [0, '-200%', 0],
+                  rotate: [0, 0, 0],
+                },
+                next: {
+                  translate: [0, 0, -1],
+                  rotate: [0, 0, 0],
+                },
+            },
+        });
+        countSlider(home_command_swiper, '.home-command-pagination-number')
+    }
 
-const home_command_swiper = new Swiper('.home-command-swiper', {
-    modules: [Navigation, Pagination, EffectFade, EffectCreative],
-    direction: "vertical",
-    speed: 2000,
-    slidesPerView: 1,
-    spaceBetween: 300,
-    pagination: {
-        el: ".home-command-pagination",
-    },
-    effect: "creative",
-    creativeEffect: {
-      prev: {
-        translate: [0, '-200%', 0],
-        rotate: [0, 0, 0],
-      },
-      next: {
-        translate: [0, 0, -1],
-        rotate: [0, 0, 0],
-      },
-    },
-});
-countSlider(home_command_swiper, '.home-command-pagination-number')
-const home_command_text = new Swiper('.home-command-swiper--text', {
-    modules: [Navigation, Pagination, EffectFade, Thumbs],
-    speed: 2000,
-    slidesPerView: 1,
-    spaceBetween: 300,
-});
-home_command_swiper.on('slideChange', function () {
-    home_command_text.slideTo(this.activeIndex, 2000)
-});
-$('.home-command--next').on('click', function () {
-    home_command_swiper.slideNext()
-});
-
-// const home_advantages_swiper = new Swiper('.home-advantages-swiper', {
-//     modules: [Navigation, Pagination, Mousewheel],
-//     direction: "vertical",
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-//     mousewheel: true,
-//     mousewheel: {
-//         eventsTarget: '.home-advantages',
-//         releaseOnEdges: true,
-//         ForceToAxis: true,
-//     },
-//     on: {
-//         slideChangeTransitionStart: function (swiper) {
-//             if ((swiper.activeIndex == 0) || (swiper.activeIndex == swiper.slides.length - 1)) {
-//                 centeredBlock(0);
-//             } else {
-//                 centeredBlock(500);
-//             }
-//         }
-//     },
-// });
-// function centeredBlock(speed) {
-//     $('html, body').animate({
-//         scrollTop: $('.home-advantages').offset().top
-//     }, speed);
-// }
-// let skewSetter = gsap.quickTo(".home-advantages-slide", "skewY")
-
-// ScrollTrigger.create({
-//     wrapper: ".home-advantages-swiper",
-//     content: ".home-advantages-wrapper",
-//     smooth: 2,
-//     speed: 3,
-//     effects: true,
-//     onUpdate: self => skewSetter(0),
-//     onStop: () => skewSetter(0)
-// });
-
-// ScrollTrigger.create({
-//     trigger: '.home-holiday',
-//     start: "top top", 
-//     pin: true, 
-//     pinSpacing: false 
-// });
-
-// gsap.utils.toArray(".home-advantages").forEach((panel, i) => {
-//     ScrollTrigger.create({
-//       trigger: panel,
-//       start: "top top",
-//       pin: true, 
-//       pinSpacing: false 
-//     });
-// });
-if ($('.home-advantages').length) {
-    let panels = document.querySelector('.home-advantages-wrapper');
-    let sections = gsap.utils.toArray(".home-advantages-slide");
-
-    gsap.from(panels, {
-        scrollTrigger: {
-            trigger: ".home-advantages",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-            start: "top top",
-            end: "+=200%"
-        },
-        // scaleY: 0, 
-        transformOrigin: "center top", 
-        ease: "none"
+    countSlider(home_command_swiper, '.home-command-pagination-number')
+    const home_command_text = new Swiper('.home-command-swiper--text', {
+        modules: [Navigation, Pagination, EffectFade, Thumbs],
+        speed: 2000,
+        slidesPerView: 1,
+        spaceBetween: 300,
+    });
+    home_command_swiper.on('slideChange', function () {
+        home_command_text.slideTo(this.activeIndex, 2000)
+    });
+    home_command_text.on('slideChange', function () {
+        home_command_swiper.slideTo(this.activeIndex, 2000)
+    });
+    $('.home-command--next').on('click', function () {
+        const deg = $('.home-command-slide.swiper-slide-active').data('rot')
+        home_command_swiper.params.creativeEffect.prev.rotate = [0, 0, deg];
+        home_command_swiper.slideNext()
+        home_command_swiper.init()
+    });
+    $('.home-command--prev').on('click', function () {
+        const deg = $('.home-command-slide.swiper-slide-active').data('rot')
+        home_command_swiper.params.creativeEffect.prev.rotate = [0, 0, deg];
+        home_command_swiper.slidePrev()
+        home_command_swiper.init()
+    });
+    $(window).resize(function () {
+        mainCommandSwiper()
     });
 
-    sections.forEach((eachPanel, index) => {
-	
-        // let realIndex = (index + 1);
+
+
     
-        // ScrollTrigger.create({
-        //     scroller: panels,
-        //     trigger: eachPanel,
-        //     start: "top 50%",
-        //     end: "top bottom",  
-        //     onLeave: function() {
-        //         eachPanel.classList.add('active');
-        //     },
-        //     onLeaveBack: function() {
-        //         eachPanel.classList.remove('active');
-        //     },  
-    
-        // });
-        ScrollTrigger.create({
-            trigger: eachPanel,
-            toggleClass: "active",
-            start: "top 90%",
-            end:"top 10%",
-            // markers:true
-        })
-    
-    });
-}
+    if (screen.width < 769) {
+        const home_advantages_swiper = new Swiper('.home-advantages-swiper', {
+            modules: [Navigation, Pagination],
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".home-advantages-pagination",
+            },
+        });
+    }
+})
+
