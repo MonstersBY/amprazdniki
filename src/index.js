@@ -42,14 +42,14 @@ $(document).ready(function(){
 
     if($('.baner').length) {
         const baner = new Swiper('.baner-slider-main', {
-            modules: [Navigation, Pagination, EffectFade],
+            modules: [Navigation, Pagination, EffectFade, Autoplay],
             speed: 1500, 
             slidesPerView: 1,
             spaceBetween: 30,
             effect: "fade",
-            autoplay: {
-                delay: 1000,
-            },
+            // autoplay: {
+            //     delay: 1000,
+            // },
             fadeEffect: {
                 crossFade: true
             },
@@ -59,7 +59,8 @@ $(document).ready(function(){
         });
         countSlider(baner, '.baner-slider-pagination-number')
         setTimeout(() => {
-            
+            baner.autoplay.start()
+            baner.params.autoplay.delay = 2500;
         }, 5250)
     }
     
@@ -146,36 +147,97 @@ $(document).ready(function(){
         home_second.slidePrev()
     });
 
-    
-    const home_programs_img = new Swiper('.home-programs--swiper-img', {
-        modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
-        speed: 2000, 
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        effect: "coverflow",
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 300,
-            modifier: 3,
-            slideShadows: false,
-            scale: 1.12,
-        },
-        pagination: {
-            el: ".home-programs-pagination",
-        },
-        breakpoints: {
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 1000,
-                modifier: 2,
-                slideShadows: false,
-                scale: 1.7,
-            },
-        },
-    });
-    countSlider(home_programs_img, '.home-programs-pagination-number')
+    function startProgramAnim() {
+        setTimeout(() => {
+            $('.home-programs-img').css('left', 0)
+            $('.home-programs-img').addClass('change')
+            $('.home-programs--left').addClass('start')
+
+            setTimeout(() => {
+                $('.home-programs--anime').removeClass('home-programs--anime')
+                setTimeout(() => {
+                    $('.home-programs--swiper-img').find('.swiper-wrapper').css('transition', 'unset')
+                    const home_programs_img = new Swiper('.home-programs--swiper-img', {
+                        modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
+                        speed: 2000, 
+                        slidesPerView: 'auto',
+                        centeredSlides: true,
+                        effect: "coverflow",
+                        coverflowEffect: {
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 300,
+                            modifier: 3,
+                            slideShadows: false,
+                            scale: 1.12,
+                        },
+                        pagination: {
+                            el: ".home-programs-pagination",
+                        },
+                        breakpoints: {
+                            coverflowEffect: {
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 1000,
+                                modifier: 2,
+                                slideShadows: false,
+                                scale: 1.7,
+                            },
+                        },
+                    });
+                    countSlider(home_programs_img, '.home-programs-pagination-number')
+                    home_programs_img.on('slideChange', function () {
+                        home_programs_info.slideTo(this.activeIndex, 2000)
+                    });
+                },50)
+            },1000)
+        }, 1500)
+    }
+    if($('.home-programs').length) {
+        if (screen.width < 769) {
+            $('.home-programs--swiper-img').find('.swiper-wrapper').css('transition', 'unset')
+            $('.home-programs--anime').removeClass('home-programs--anime')
+            const home_programs_img = new Swiper('.home-programs--swiper-img', {
+                modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
+                speed: 2000, 
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                effect: "coverflow",
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 3,
+                    slideShadows: false,
+                    scale: 1.12,
+                },
+                pagination: {
+                    el: ".home-programs-pagination",
+                },
+                breakpoints: {
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 1000,
+                        modifier: 2,
+                        slideShadows: false,
+                        scale: 1.7,
+                    },
+                },
+            });
+            home_programs_img.on('slideChange', function () {
+                home_programs_info.slideTo(this.activeIndex, 2000)
+            });
+        } else {
+            $(document).scroll(function () {
+                if ($(this).scrollTop() > $('.home-programs').position().top && $(this).scrollTop() < $('.home-programs').position().top + $('.home-programs').height() && !($('.home-programs').hasClass('playing'))) {
+                    $('.home-programs').addClass('playing')
+                    startProgramAnim()
+                }
+            });
+
+        }
+    }
     const home_programs_info = new Swiper('.home-programs--swiper-text', {
         modules: [Navigation, Pagination, EffectFade, Thumbs],
         speed: 2000,
@@ -186,9 +248,7 @@ $(document).ready(function(){
             crossFade: true
         },
     });
-    home_programs_img.on('slideChange', function () {
-        home_programs_info.slideTo(this.activeIndex, 2000)
-    });
+
     
     const home_review_swiper = new Swiper('.home-review-swiper', {
         modules: [Navigation, Pagination, EffectFade, Thumbs],

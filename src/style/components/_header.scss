@@ -177,9 +177,9 @@
             height: 100vh;
             gap: 12rem;
             background: #F5F5F5;
-            transform: translateY(-100%);
+            transform: translateY(-150%);
             padding: 26rem 4.8rem 0;
-            transition: transform .25s ease-in-out;
+            transition: transform .75s ease-in-out;
         }
         &-menu {
             display: flex;

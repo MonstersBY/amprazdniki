@@ -449,17 +449,63 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
     overflow: hidden;
 
     &--anime {
+		.home-programs--left {
+			transform: translateX(-120%);
+
+			&.start {
+				transform: translateX(0);
+
+				.home-programs-btn {
+					bottom: -13rem;
+				}
+			}
+		}
+		.home-programs-pagination {
+			opacity: 0;
+		}
+		.home-programs-pagination-number {
+			opacity: 0;
+		}
         .home-programs--swiper-img {
             overflow: unset;
+			.swiper-wrapper {
+				margin: 0;
+			}
         }
+		.home-programs-btn {
+			bottom: -59rem;
+		}
         .home-programs-img {
             &.swiper-slide-active {
                 width: 41.8rem;
                 height: 79.2rem;
             }
+
             width: 41.8rem;
             height: 79.2rem;
-            transform: scale(1) !important;
+			
+			&.change {
+				width: 56.6rem;
+				height: 79.2rem;
+				// &:nth-child(1) {
+				// 	left: 0;
+				// }
+				// &:nth-child(2) {
+				// 	left: -11.5rem;
+				// 	transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(0.78);
+				// 	z-index: -1;
+				// }
+				// &:nth-child(3) {
+				// 	left: -50rem;
+				// 	transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(0.69);
+				// 	z-index: -2;
+				// }
+				// &:nth-child(4) {
+				// 	left: -100rem;
+				// 	transform: translate3d(0px, 0px, -2700px) rotateX(0deg) rotateY(0deg) scale(0.64);
+				// 	z-index: -3;
+				// }
+			}
             &:nth-child(1) {
                 left: -59.5rem;
             }
@@ -485,14 +531,18 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		left: auto;
 		top: auto;
 		right: 0;
+        transition: opacity 2s ease-in-out;
 	}
 	&-pagination-number {
 		position: absolute;
 		top: 0;
 		right: 0;
+        transition: opacity 2s ease-in-out;
 	}
 	&--left {
 		width: 44rem;
+		transform: translateX(0);
+        transition: transform 1s ease-in-out;
 	}
 	&--title {
 		margin-bottom: 26.4rem;
@@ -535,6 +585,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		bottom: -13rem;
 		left: 33rem;
         z-index: 1;
+        transition: bottom 1.5s ease-in-out;
 
         &--second {
             position: relative;
@@ -551,6 +602,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 
 		.swiper-wrapper {
 			margin-left: -30rem;
+			transition: margin-left 1s ease-in-out;
 			// width: 116.3rem;
 			// height: 79.2rem;
 			// margin-left: -30rem;
@@ -564,7 +616,27 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		// flex: none;
 		width: 56.6rem;
 		height: 79.2rem;
-        // transition: all 1s ease-in-out;
+		transform: translate3d(0px, 0px, 0) rotateX(0deg) rotateY(0deg) scale(1);
+        transition: width 0.5s ease-in-out, all 1s ease-in-out !important;
+
+		&.change {
+			width: 56.6rem;
+			height: 79.2rem;
+			// &:nth-child(1) {
+			// }
+			// &:nth-child(2) {
+			// 	transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(0.78);
+			// 	z-index: -1;
+			// }
+			// &:nth-child(3) {
+			// 	transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(0.69);
+			// 	z-index: -2;
+			// }
+			// &:nth-child(4) {
+			// 	transform: translate3d(0px, 0px, -2700px) rotateX(0deg) rotateY(0deg) scale(0.64);
+			// 	z-index: -3;
+			// }
+		}
 
 		img {
 			width: 100%;
@@ -1375,7 +1447,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             margin-bottom: 26.4rem;
             text-transform: uppercase;
             position: absolute;
-            top: 0;
+            // top: 0;    
+			top: -108rem;
         }
         &-info {
             text-transform: uppercase;
@@ -1432,6 +1505,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
     
             .swiper-wrapper {
                 margin-left: -14.2rem;
+				transition: unset;
                 // width: 116.3rem;
                 // height: 79.2rem;
                 // margin-left: -30rem;
