@@ -38,6 +38,31 @@ $(document).ready(function(){
             $(info).find('.pagination-number--current').html('0'+ (swip.activeIndex+1))
         });
     }
+
+
+    if($('.baner').length) {
+        const baner = new Swiper('.baner-slider-main', {
+            modules: [Navigation, Pagination, EffectFade],
+            speed: 1500, 
+            slidesPerView: 1,
+            spaceBetween: 30,
+            effect: "fade",
+            autoplay: {
+                delay: 1000,
+            },
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: ".baner-slider-pagination",
+            },
+        });
+        countSlider(baner, '.baner-slider-pagination-number')
+        setTimeout(() => {
+            
+        }, 5250)
+    }
+    
     
     let home_second
     if(!$('.home-second-swiper').data('platform')) {
@@ -111,12 +136,16 @@ $(document).ready(function(){
             }
         }
     }
-    
-    $('.home-second-slide-center--btn').on("click", function (e) {
+
+    $('.home-second-swiper-btn--next').on("click", function (e) {
         e.preventDefault();
         home_second.slideNext()
     });
-    
+    $('.home-second-swiper-btn--prev').on("click", function (e) {
+        e.preventDefault();
+        home_second.slidePrev()
+    });
+
     
     const home_programs_img = new Swiper('.home-programs--swiper-img', {
         modules: [Navigation, Pagination, EffectCoverflow, Thumbs],
@@ -174,6 +203,14 @@ $(document).ready(function(){
                 slidesPerView: 1,
             },
         },
+    });
+    $('.home-review-btn--next').on("click", function (e) {
+        e.preventDefault();
+        home_review_swiper.slideNext()
+    });
+    $('.home-review-btn--prev').on("click", function (e) {
+        e.preventDefault();
+        home_review_swiper.slidePrev()
     });
     countSlider(home_review_swiper, '.home-review-pagination-number')
     
@@ -276,13 +313,13 @@ $(document).ready(function(){
     home_command_text.on('slideChange', function () {
         home_command_swiper.slideTo(this.activeIndex, 2000)
     });
-    $('.home-command--next').on('click', function () {
+    $('.home-command-swiper-btns--right').on('click', function () {
         const deg = $('.home-command-slide.swiper-slide-active').data('rot')
         home_command_swiper.params.creativeEffect.prev.rotate = [0, 0, deg];
         home_command_swiper.slideNext()
         home_command_swiper.init()
     });
-    $('.home-command--prev').on('click', function () {
+    $('.home-command-swiper-btns--left').on('click', function () {
         const deg = $('.home-command-slide.swiper-slide-active').data('rot')
         home_command_swiper.params.creativeEffect.prev.rotate = [0, 0, deg];
         home_command_swiper.slidePrev()
