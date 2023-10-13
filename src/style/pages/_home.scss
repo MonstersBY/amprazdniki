@@ -1195,6 +1195,38 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			top: -20rem;
 			transition: z-index 1s ease-in-out;
 
+			&-pagination.swiper-pagination.swiper-pagination-horizontal.swiper-pagination-bullets {
+				position: absolute;
+				right: 3.2rem;
+				left: auto;
+				top: 18.6rem;
+				transform: translateY(0);
+				height: fit-content;
+				.swiper-pagination-bullet.swiper-pagination-bullet-active {
+					background: white;
+				}
+				.swiper-pagination-bullet {
+					width: 4rem;
+					height: 2rem;
+				}
+			}
+			&-pagination-number {
+				display: flex;
+				position: absolute;
+				left: 3.2rem;
+				top: 18.6rem;
+				z-index: 1;
+				font-size: 5.2rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 130%;
+				text-transform: uppercase;
+
+				.pagination-number--all {
+					top: 4rem;
+				}
+			}
+
 			&.disabled {
 				z-index: -2;
 			}
