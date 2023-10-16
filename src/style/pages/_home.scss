@@ -387,6 +387,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			&--price {
 				position: relative;
 				margin-bottom: 3rem;
+				width: fit-content;
+				margin-left: auto;
 
 				strong {
 					color: #b684b3;
@@ -1427,6 +1429,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				&--price {
 					position: relative;
 					margin-bottom: 0;
+					margin-left: 0;
 					font-size: 2.8rem;
 					line-height: 130%;
 
