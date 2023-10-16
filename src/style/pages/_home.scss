@@ -942,11 +942,14 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		z-index: 1;
 	}
 	&-btn {
-		&--prev, &--next {
-			width: 50rem;
+		&--prev {
+			width: 69rem;
+		}
+		&--next {
+			width: 52rem;
 		}
 		&--prev {
-			cursor: $cursor-left-black;
+			cursor: $cursor-left-white;
 		}
 		&--next {
 			cursor: $cursor-right-black;
