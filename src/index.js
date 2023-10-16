@@ -7,6 +7,18 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import 'animate.css';
+import WOW from "wow.js";
+
+const wow = new WOW({
+	boxClass:     'wow',
+	animateClass: 'animate__animated',
+	offset:       100,
+	mobile:       true,
+	live:         true
+})
+wow.init();
+
 import './js/utils/jquery.mask'
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -303,6 +315,33 @@ $(document).ready(function () {
 	$(window).resize(function () {
 		changeHomeSecond()
 	});
+
+	const home_review_swiper__img = new Swiper('.home-review-swiper--img', {
+		modules: [Navigation, Pagination, EffectCreative],
+		speed: 2000,
+		slidesPerView: 1,
+		spaceBetween: `${remToPx(1.5)}rem`,
+		effect: "creative",
+		creativeEffect: {
+			prev: {
+				shadow: true,
+				translate: ["-20%", 0, -1],
+			},
+			next: {
+				translate: ["100%", 0, 0],
+			},
+		},
+	});
+	const home_review_swiper__text = new Swiper('.home-review-swiper--text', {
+		modules: [Navigation, Pagination, EffectFade],
+		speed: 2000,
+		slidesPerView: 1,
+		spaceBetween: `${remToPx(1.5)}rem`,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
+	});
 	function changeHomeSecond() {
 		if (screen.width < 769) {
 			if ($('.home-review-swiper').data('platform') == 'desktop') {
@@ -355,10 +394,18 @@ $(document).ready(function () {
 	$('.home-review-btn--next').on("click", function (e) {
 		e.preventDefault();
 		home_review_swiper.slideNext()
+		home_review_swiper__text.slideNext()
+		setTimeout(() => {
+			home_review_swiper__img.slideNext()
+		}, 700)
 	});
 	$('.home-review-btn--prev').on("click", function (e) {
 		e.preventDefault();
-		home_review_swiper.slidePrev()
+		home_review_swiper__img.slidePrev()
+		home_review_swiper__text.slidePrev()
+		setTimeout(() => {
+			home_review_swiper.slidePrev()
+		}, 600)
 	});
 
 	$('.home-command-slide').each(function (i) {
