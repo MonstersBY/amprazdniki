@@ -1,6 +1,8 @@
 .footer {
 	// .footer__inner
 	overflow: hidden;
+	padding-top: 2rem;
+    margin-top: -2rem;
 	&__inner {
 		display: flex;
 		justify-content: space-between;
@@ -22,7 +24,7 @@
 	// .footer__hashtag
 	&__hashtag {
 		margin-top: 8rem;
-		margin-bottom: -1.2rem;
+		margin-bottom: -1.6rem;
 
 		color: rgba(134, 107, 150, 0.25);
 		font-size: 13rem;
@@ -32,6 +34,7 @@
 		text-transform: uppercase;
 		display: flex;
   		justify-content: space-between;
+		font-size: 13.8rem;
 	}
 }
 .footer-main {
@@ -104,7 +107,7 @@
 			margin: 6rem -3.2rem -1.2rem;
 			padding: 0 3rem;
 
-			font-size: 10.4rem;
+			font-size: 11.2rem;
 		}
 	}
 	.footer-main {
