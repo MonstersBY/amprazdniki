@@ -1646,6 +1646,9 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 
 			transition: transform !important;
         }
+		&--btns {
+			display: none;
+		}
     }
 
 	.home-advantages {
