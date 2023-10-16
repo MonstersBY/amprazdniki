@@ -186,13 +186,21 @@ $(document).ready(function () {
 							},
 						},
 					});
+					$('.home-programs-btn--next').on("click", function (e) {
+						e.preventDefault();
+						home_programs_img.slideNext()
+					});
+					$('.home-programs-btn--prev').on("click", function (e) {
+						e.preventDefault();
+						home_programs_img.slidePrev()
+					});
 					countSlider(home_programs_img, '.home-programs-pagination-number')
 					home_programs_img.on('slideChange', function () {
 						home_programs_info.slideTo(this.activeIndex, 2000)
 					});
 				}, 50)
 			}, 1000)
-		}, 1500)
+		}, 500)
 	}
 	if ($('.home-programs').length) {
 		if (screen.width < 769) {
@@ -251,20 +259,99 @@ $(document).ready(function () {
 	});
 
 
-	const home_review_swiper = new Swiper('.home-review-swiper', {
-		modules: [Navigation, Pagination, EffectFade, Thumbs],
-		speed: 2000,
-		slidesPerView: 'auto',
-		spaceBetween: `${remToPx(1.5)}rem`,
-		pagination: {
-			el: ".home-review-pagination",
-		},
-		breakpoints: {
-			769: {
-				slidesPerView: 1,
+	let home_review_swiper
+	if (!$('.home-review-swiper').data('platform')) {
+		screen.width < 769 ? $('.home-review-swiper').data('platform', 'mobile') : $('.home-second-swiper').data('platform', 'desktop')
+	}
+	if (screen.width < 769) {
+		home_review_swiper = new Swiper('.home-review-swiper', {
+			modules: [Navigation, Pagination, EffectCreative],
+			speed: 2000,
+			slidesPerView: 'auto',
+			spaceBetween: `${remToPx(3.2)}rem`,
+			pagination: {
+				el: ".home-review-pagination",
 			},
-		},
+			breakpoints: {
+				769: {
+					slidesPerView: 1,
+				},
+			},
+		});
+	} else {
+		home_review_swiper = new Swiper('.home-review-swiper', {
+			modules: [Navigation, Pagination, EffectCreative],
+			speed: 2000,
+			slidesPerView: 1,
+			spaceBetween: `${remToPx(1.5)}rem`,
+			pagination: {
+				el: ".home-review-pagination",
+			},
+			effect: "creative",
+			creativeEffect: {
+				prev: {
+					shadow: true,
+					translate: ["-20%", 0, -1],
+				},
+				next: {
+					translate: ["100%", 0, 0],
+				},
+			},
+		});
+		countSlider(home_review_swiper, '.home-review-pagination-number')
+	}
+	$(window).resize(function () {
+		changeHomeSecond()
 	});
+	function changeHomeSecond() {
+		if (screen.width < 769) {
+			if ($('.home-review-swiper').data('platform') == 'desktop') {
+				$('.home-review-swiper').data('platform', 'mobile')
+				home_review_swiper.destroy();
+				home_review_swiper = new Swiper('.home-review-swiper', {
+					modules: [Navigation, Pagination, EffectCreative],
+					speed: 2000,
+					slidesPerView: 'auto',
+					spaceBetween: `${remToPx(1.5)}rem`,
+					pagination: {
+						el: ".home-review-pagination",
+					},
+					breakpoints: {
+						769: {
+							slidesPerView: 1,
+						},
+					},
+				});
+			}
+		} else {
+			if ($('.home-review-swiper').data('platform') == 'mobile') {
+				$('.home-review-swiper').data('platform', 'desktop')
+				home_review_swiper.destroy();
+				home_review_swiper = new Swiper('.home-review-swiper', {
+					modules: [Navigation, Pagination, EffectCreative],
+					speed: 2000,
+					slidesPerView: 'auto',
+					spaceBetween: `${remToPx(1.5)}rem`,
+					pagination: {
+						el: ".home-review-pagination",
+					},
+					effect: "creative",
+					creativeEffect: {
+						prev: {
+							shadow: true,
+							translate: ["-20%", 0, -1],
+						},
+						next: {
+							translate: ["100%", 0, 0],
+						},
+					},
+				});
+			}
+		}
+	}
+
+
+
 	$('.home-review-btn--next').on("click", function (e) {
 		e.preventDefault();
 		home_review_swiper.slideNext()
@@ -273,7 +360,6 @@ $(document).ready(function () {
 		e.preventDefault();
 		home_review_swiper.slidePrev()
 	});
-	countSlider(home_review_swiper, '.home-review-pagination-number')
 
 	$('.home-command-slide').each(function (i) {
 		(i + 1) % 2 ? $(this).data('rot', 30) : $(this).data('rot', -30)
@@ -286,11 +372,15 @@ $(document).ready(function () {
 				home_second.destroy();
 				home_command_swiper = new Swiper('.home-command-swiper', {
 					modules: [Navigation, Pagination, EffectFade, EffectCreative],
-					speed: 2000,
+					speed: 1500,
 					slidesPerView: 1,
 					spaceBetween: 300,
 					pagination: {
 						el: ".home-command-pagination",
+					},
+					effect: "fade",
+					fadeEffect: {
+						crossFade: true
 					},
 				});
 			}
@@ -301,7 +391,7 @@ $(document).ready(function () {
 				home_command_swiper = new Swiper('.home-command-swiper', {
 					modules: [Navigation, Pagination, EffectFade, EffectCreative],
 					direction: "vertical",
-					speed: 2000,
+					speed: 1500,
 					slidesPerView: 1,
 					spaceBetween: 300,
 					pagination: {
@@ -329,18 +419,22 @@ $(document).ready(function () {
 	if (screen.width < 769) {
 		home_command_swiper = new Swiper('.home-command-swiper', {
 			modules: [Navigation, Pagination, EffectFade, EffectCreative],
-			speed: 2000,
+			speed: 1500,
 			slidesPerView: 1,
 			spaceBetween: 300,
 			pagination: {
 				el: ".home-command-pagination",
+			},
+			effect: "fade",
+			fadeEffect: {
+				crossFade: true
 			},
 		});
 	} else {
 		home_command_swiper = new Swiper('.home-command-swiper', {
 			modules: [Navigation, Pagination, EffectFade, EffectCreative],
 			direction: "vertical",
-			speed: 2000,
+			speed: 1500,
 			slidesPerView: 1,
 			spaceBetween: 300,
 			pagination: {
@@ -364,9 +458,13 @@ $(document).ready(function () {
 	countSlider(home_command_swiper, '.home-command-pagination-number')
 	const home_command_text = new Swiper('.home-command-swiper--text', {
 		modules: [Navigation, Pagination, EffectFade, Thumbs],
-		speed: 2000,
+		speed: 1500,
 		slidesPerView: 1,
 		spaceBetween: 300,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
 	});
 	home_command_swiper.on('slideChange', function () {
 		home_command_text.slideTo(this.activeIndex, 2000)

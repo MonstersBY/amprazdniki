@@ -51,6 +51,22 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         transform: translateX(-99.2752rem);
     }
 }
+@keyframes baner-mob-left {
+	from {
+		transform: translateX(-150%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+@keyframes baner-mob-right {
+	from {
+		transform: translateX(150%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
 
 .baner {
 	&.white {
@@ -325,12 +341,13 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 					position: absolute;
 					top: 0;
 					left: 0;
-					background: linear-gradient(
-						180deg,
-						rgba(0, 0, 0, 0) 41.3%,
-						rgba(0, 0, 0, 0.35) 61.83%,
-						rgba(0, 0, 0, 0.4) 71.05%
-					);
+					// background: linear-gradient(
+					// 	180deg,
+					// 	rgba(0, 0, 0, 0) 41.3%,
+					// 	rgba(0, 0, 0, 0.35) 61.83%,
+					// 	rgba(0, 0, 0, 0.4) 71.05%
+					// );
+					background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75.95%, rgba(0, 0, 0, 0.35) 92.745%, rgba(0, 0, 0, 0.4) 106.575%);
 				}
 			}
 			&--text {
@@ -354,7 +371,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				align-items: center;
 				justify-content: center;
 				bottom: 5.3rem;
-				border: 0.2rem solid #ffffff;
+				border: 0.15rem solid #ffffff;
 				border-radius: 50%;
 				left: 0;
 				right: 0;
@@ -362,8 +379,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				cursor: pointer;
 
 				svg {
-					width: 3.4rem;
-					height: 3.4rem;
+					width: 5.4rem;
+					height: 5.4rem;
 				}
 			}
 		}
@@ -387,6 +404,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			&--price {
 				position: relative;
 				margin-bottom: 3rem;
+				width: fit-content;
+				margin-left: auto;
 
 				strong {
 					color: #b684b3;
@@ -543,6 +562,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		width: 44rem;
 		transform: translateX(0);
         transition: transform 1s ease-in-out;
+		position: relative;
+		z-index: 1;
 	}
 	&--title {
 		margin-bottom: 26.4rem;
@@ -601,7 +622,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		overflow: hidden;
 
 		.swiper-wrapper {
-			margin-left: -30rem;
+			// margin-left: -30rem;
+			margin-left: -7rem;
 			transition: margin-left 1s ease-in-out;
 			// width: 116.3rem;
 			// height: 79.2rem;
@@ -644,6 +666,24 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			object-fit: cover;
 		}
 	}
+	&--btns {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	&-btn--prev, &-btn--next {
+		flex: 1;
+	}
+	&-btn--prev {
+		cursor: $cursor-left-white;
+	}
+	&-btn--next {
+		cursor: $cursor-right-white;
+	}
 }
 
 .home-advantages {
@@ -665,7 +705,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         width: 58.4rem;
         height: 61rem;
 		// transform: translateY(100vh);
-		transition: transform .4s ease-in-out;
+		transition: transform 1.2s ease-in-out;
 
         &:nth-child(1) {
             background: #D77;
@@ -696,7 +736,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         &:nth-child(4) {
             background: #E08AA4;
             color: #FFF;
-            margin-left: 58rem;
+            margin-left: 58.8rem;
 
 			.home-advantages-slide--subtitle, .home-advantages-slide--text {
 				color: rgba(255, 255, 255, 0.80);
@@ -782,6 +822,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		margin-left: auto;
 		margin-right: 44.8rem;
 		text-transform: uppercase;
+		position: relative;
+    	z-index: 1;
 	}
 	&-btn {
 		position: absolute;
@@ -796,6 +838,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 	&-slide {
 		position: relative;
 		height: 99rem;
+		background: #F5F5F5;
 
 		&--box {
 			width: 96rem;
@@ -837,6 +880,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			position: absolute;
 			right: 12.2rem;
 			bottom: 13.3rem;
+			text-transform: uppercase;
 		}
 		&--right {
 		}
@@ -916,6 +960,11 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         z-index: 2;
         bottom: -18rem;
         left: 33rem;
+
+		&--second {
+			position: relative;
+			left: 1.2rem;
+		}
     }
     &-swiper {
         height: 69.6rem;
@@ -942,6 +991,10 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         right: 0;
         bottom: 0rem;
         text-align: right;
+
+		span {
+			color: rgba(41, 41, 41, 0.50);
+		}
     }
     &--text {
         display: flex;
@@ -1186,7 +1239,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		.container {
 			width: 100%;
 			padding: 0;
-			height: 160rem;
+			// height: 160rem;
+			height: 136rem;
 		}
 		&-slider {
 			gap: 2rem;
@@ -1268,15 +1322,15 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		}
 		&-btn {
 			right: 3.2rem;
-			top: 57.4rem;
+			top: 56.8rem;
 			position: absolute;
-			animation-name: baner-btn;
+			animation-name: baner-mob-right;
 			animation-duration: 2.5s;
 		}
 		&-main {
-			bottom: 25.6rem;
+			bottom: 20.8rem;
 			left: 3.2rem;
-			animation-name: baner-show;
+			animation-name: baner-mob-left;
 			animation-duration: 3s;
 
 			&--second {
@@ -1287,10 +1341,10 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 
 			&-subtitle {
 				position: absolute;
-				right: 5rem;
+				right: 10rem;
 				left: unset;
-				bottom: 38.6rem;
-				animation-name: baner-show;
+				bottom: 32.4rem;
+				animation-name: baner-mob-right;
 				animation-duration: 3s;
 			}
 		}
@@ -1402,7 +1456,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 					align-items: center;
 					justify-content: center;
 					bottom: 6.4rem;
-					border: 0.2rem solid #ffffff;
+					border: 0.3rem solid rgba(217, 217, 217, 0.50);
 					border-radius: 50%;
 					left: 0;
 					right: 0;
@@ -1427,6 +1481,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				&--price {
 					position: relative;
 					margin-bottom: 0;
+					margin-left: 0;
 					font-size: 2.8rem;
 					line-height: 130%;
 
@@ -1461,13 +1516,28 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 	}
 
     .home-programs {
-        padding: 26rem auto;
+        padding: 26rem 0;
         .container {
             display: flex;
             flex-direction: column-reverse;
-            gap: 15.7rem;
+            gap: 4rem;
             position: relative;
         }
+		&--anime {
+			.home-programs-img {
+				&.swiper-slide-active {
+					width: 46rem;
+					height: 64rem;
+				}
+	
+                width: 46rem;
+                height: 64rem;
+				
+				&.change {
+					height: 64rem;
+				}
+			}
+		}
         &-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
             display: none;
         }
@@ -1480,7 +1550,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             text-transform: uppercase;
             position: absolute;
             // top: 0;    
-			top: -108rem;
+			top: -95rem;
         }
         &-info {
             text-transform: uppercase;
@@ -1536,11 +1606,9 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             margin: 0 -3.2rem;
     
             .swiper-wrapper {
-                margin-left: -14.2rem;
+                // margin-left: -14.2rem;
+                margin-left: -11rem;
 				transition: unset;
-                // width: 116.3rem;
-                // height: 79.2rem;
-                // margin-left: -30rem;
             }
         }
         &-img {
@@ -1551,6 +1619,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             flex: none;
             width: 46rem;
             height: 64rem;
+
+			transition: transform !important;
         }
     }
 
@@ -1596,6 +1666,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 					.home-advantages-slide--title {
 						grid-column: 1;
 						width: max-content;
+						margin-bottom: 1rem;
 					}
 					.home-advantages-slide--img {
 						grid-column: 1;
@@ -1814,6 +1885,10 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             bottom: auto;
             left: auto;
             margin: auto;
+
+			&--second {
+				left: 3.2rem;
+			}
         }
         &-swiper {
             height: 65.2rem;
@@ -1952,7 +2027,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			width: 100%;
 			transform: rotate(0);
 
-			font-size: 10.4rem;
+			font-size: 11.2rem;
 			font-weight: 400;
 			line-height: 95%;
 			margin: 0 -3.2rem -1.2rem;
