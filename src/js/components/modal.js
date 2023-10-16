@@ -14,6 +14,7 @@ $(document).ready(function () {
 	})
 
 	$('.modal-back').on('click', closeModal);
+	$('.modal-return').on('click', closeModal);
 	$('.modal-exit').on('click', closeModal);
 
 	function closeModal() {
