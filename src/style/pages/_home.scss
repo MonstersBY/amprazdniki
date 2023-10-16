@@ -1740,6 +1740,9 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			overflow: hidden;
 			padding: auto 3.2rem;
 			margin: auto -3.2rem;
+			width: auto;
+			height: auto;
+			position: static;
 
 			.swiper-wrapper {
 				margin-left: 3.2rem;
@@ -1757,13 +1760,6 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			margin-right: auto;
 			text-align: center;
 			margin-bottom: 9.6rem;
-		}
-		&-swiper {
-			width: auto;
-			height: auto;
-			margin-top: 0;
-			margin-left: 0;
-			position: relative;
 		}
 		&-swiper--img {
 			display: none;
