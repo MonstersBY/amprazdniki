@@ -1,4 +1,5 @@
 .team-intro {
+	overflow: hidden;
 	margin-top: 6.7rem;
 	padding-top: 10rem;
 	// .team-intro__inner
@@ -87,6 +88,7 @@
 	}
 }
 .team-content {
+	overflow: hidden;
 	&__inner {
 		display: flex;
 		flex-direction: column;
