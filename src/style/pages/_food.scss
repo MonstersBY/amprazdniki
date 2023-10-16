@@ -1,4 +1,5 @@
 .food-main {
+	overflow: hidden;
 	margin-top: 6.7rem;
 	margin-bottom: 0;
 	padding-bottom: 20rem;
@@ -9,7 +10,7 @@
 		height: 82.7rem;
 	}
 	// .food-main__main
-	&__main {
+	&__wrapper {
 		position: relative;
 		width: 146.1rem;
 		height: 74rem;
@@ -21,9 +22,8 @@
 	&__title {
 		position: absolute;
 		top: 0;
-		left: 50%;
+		left: 21rem;
 		z-index: 1;
-		transform: translateX(-50%);
 		width: 104.3rem;
 		text-align: center;
 		text-transform: uppercase;
@@ -36,8 +36,7 @@
 	&__img {
 		position: absolute;
 		top: 17.4rem;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 44.8rem;
 		width: 56.6rem;
 		height: 56.6rem;
 
@@ -76,6 +75,7 @@
 		width: 36.9rem;
 		text-transform: uppercase;
 		&--tar {
+			width: 30rem;
 			text-align: right;
 		}
 	}
@@ -315,7 +315,7 @@
 			height: 116.6rem;
 		}
 		// .food-main__main
-		&__main {
+		&__wrapper {
 			position: static;
 			width: 100%;
 			height: auto;
@@ -343,6 +343,7 @@
 			top: 15rem;
 			width: 48rem;
 			height: 48rem;
+			left: 10.4rem;
 		}
 		// .food-main__text
 		&__text {
