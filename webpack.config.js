@@ -13,6 +13,7 @@ const entryPoints = {
 	index: path.resolve(__dirname, "src", "index.js"),
 	home_page: path.resolve(__dirname, "src", "index.js"),
 	food: path.resolve(__dirname, "src", "index.js"),
+	team: path.resolve(__dirname, "src", "index.js"),
 	decor: path.resolve(__dirname, "src", "index.js"),
 	articles: path.resolve(__dirname, "src", "index.js"),
 	// chairs: path.resolve(__dirname, 'src', 'index.js'),
