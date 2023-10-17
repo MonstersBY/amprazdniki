@@ -420,16 +420,16 @@ $(document).ready(function () {
 		e.preventDefault();
 		home_review_swiper.slideNext();
 		home_review_swiper__text.slideNext();
+		home_review_swiper__img.slideNext();
 		setTimeout(() => {
-			home_review_swiper__img.slideNext();
 		}, 700);
 	});
 	$(".home-review-btn--prev").on("click", function (e) {
 		e.preventDefault();
 		home_review_swiper__img.slidePrev();
 		home_review_swiper__text.slidePrev();
+		home_review_swiper.slidePrev();
 		setTimeout(() => {
-			home_review_swiper.slidePrev();
 		}, 600);
 	});
 
