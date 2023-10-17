@@ -622,8 +622,8 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		overflow: hidden;
 
 		.swiper-wrapper {
-			// margin-left: -30rem;
-			margin-left: -7rem;
+			margin-left: -30rem;
+			// margin-left: -7rem;
 			transition: margin-left 1s ease-in-out;
 			// width: 116.3rem;
 			// height: 79.2rem;
@@ -824,6 +824,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		text-transform: uppercase;
 		position: relative;
     	z-index: 1;
+		margin-bottom: -14rem;
 	}
 	&-btn {
 		position: absolute;
@@ -849,10 +850,11 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		overflow: hidden;
 	}
 	&-swiper--text {
-		width: 60rem;
+		width: 62rem;
 		position: absolute;
 		bottom: 14rem;
     	right: 12.2rem;
+		text-transform: uppercase;
 	}
 	&-slide {
 		position: relative;
