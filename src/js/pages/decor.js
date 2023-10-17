@@ -12,6 +12,8 @@ import {
 
 const decorSliders = document.querySelectorAll(".decor__slider");
 
+// const sliderBtns = document.querySelectorAll('.slider__btns')
+
 decorSliders.forEach((item) => {
 	const container = item.closest(".decor__container");
 	const pagination = container.querySelector(".decor__slider-pagination");
@@ -19,6 +21,8 @@ decorSliders.forEach((item) => {
 	const numberCur = container.querySelector(".pagination-number--current");
 	const numberLast = container.querySelector(".pagination-number--all");
 	const screenWidth = window.innerWidth;
+	const btnPrev = container.querySelector(".slider__btns-prev");
+	const btnNext = container.querySelector(".slider__btns-next");
 
 	const decorSwiperText = new Swiper(thumbs, {
 		modules: [Navigation, Pagination, EffectFade, Thumbs],
@@ -43,6 +47,10 @@ decorSliders.forEach((item) => {
 		centeredSlides: false,
 		pagination: {
 			el: pagination,
+		},
+		navigation: {
+			prevEl: btnPrev,
+			nextEl: btnNext,
 		},
 		thumbs: {
 			swiper: decorSwiperText,
