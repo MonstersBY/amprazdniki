@@ -421,16 +421,12 @@ $(document).ready(function () {
 		home_review_swiper.slideNext();
 		home_review_swiper__text.slideNext();
 		home_review_swiper__img.slideNext();
-		setTimeout(() => {
-		}, 700);
 	});
 	$(".home-review-btn--prev").on("click", function (e) {
 		e.preventDefault();
 		home_review_swiper__img.slidePrev();
 		home_review_swiper__text.slidePrev();
 		home_review_swiper.slidePrev();
-		setTimeout(() => {
-		}, 600);
 	});
 
 	$(".home-command-slide").each(function (i) {
