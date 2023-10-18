@@ -18,6 +18,7 @@ const entryPoints = {
 	articles: path.resolve(__dirname, "src", "index.js"),
 	article: path.resolve(__dirname, "src", "index.js"),
 	reviews: path.resolve(__dirname, 'src', 'index.js'),
+	programs: path.resolve(__dirname, "src", "index.js"),
 	// tables: path.resolve(__dirname, 'src', 'index.js'),
 	//   contacts: path.resolve(__dirname, 'src', 'index.js'),
 	// Добавьте другие страницы здесь

@@ -36,6 +36,7 @@ import "./js/components/header";
 import "./js/components/footer";
 import "./js/components/modal";
 import "./js/pages/home";
+import "./js/pages/programs";
 import "./js/pages/decor";
 import "./index.scss";
 
