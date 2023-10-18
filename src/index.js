@@ -39,6 +39,7 @@ import "./js/components/uploadFlie";
 import "./js/pages/home";
 import "./js/pages/programs";
 import "./js/pages/decor";
+import "./js/pages/costumes";
 import "./index.scss";
 
 $(document).ready(function () {

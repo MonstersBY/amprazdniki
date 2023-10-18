@@ -17,7 +17,8 @@ const entryPoints = {
 	decor: path.resolve(__dirname, "src", "index.js"),
 	articles: path.resolve(__dirname, "src", "index.js"),
 	article: path.resolve(__dirname, "src", "index.js"),
-	reviews: path.resolve(__dirname, 'src', 'index.js'),
+	costumes: path.resolve(__dirname, "src", "index.js"),
+	reviews: path.resolve(__dirname, "src", "index.js"),
 	programs: path.resolve(__dirname, "src", "index.js"),
 	// tables: path.resolve(__dirname, 'src', 'index.js'),
 	//   contacts: path.resolve(__dirname, 'src', 'index.js'),
@@ -156,28 +157,28 @@ module.exports = {
 				use: devMode
 					? []
 					: [
-						{
-							loader: "image-webpack-loader",
-							options: {
-								mozjpeg: {
-									progressive: true,
-								},
-								optipng: {
-									enabled: false,
-								},
-								pngquant: {
-									quality: [0.65, 0.9],
-									speed: 4,
-								},
-								gifsicle: {
-									interlaced: false,
-								},
-								webp: {
-									quality: 75,
+							{
+								loader: "image-webpack-loader",
+								options: {
+									mozjpeg: {
+										progressive: true,
+									},
+									optipng: {
+										enabled: false,
+									},
+									pngquant: {
+										quality: [0.65, 0.9],
+										speed: 4,
+									},
+									gifsicle: {
+										interlaced: false,
+									},
+									webp: {
+										quality: 75,
+									},
 								},
 							},
-						},
-					],
+					  ],
 				type: "asset/resource",
 				generator: {
 					filename: "assets/images/[name][ext]",

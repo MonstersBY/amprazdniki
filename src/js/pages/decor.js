@@ -12,8 +12,6 @@ import {
 
 const decorSliders = document.querySelectorAll(".decor__slider");
 
-// const sliderBtns = document.querySelectorAll('.slider__btns')
-
 decorSliders.forEach((item) => {
 	const container = item.closest(".decor__container");
 	const pagination = container.querySelector(".decor__slider-pagination");
