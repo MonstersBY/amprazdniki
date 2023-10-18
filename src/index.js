@@ -37,6 +37,7 @@ import "./js/components/footer";
 import "./js/components/modal";
 import "./js/pages/home";
 import "./js/pages/decor";
+import "./js/pages/costumes";
 import "./index.scss";
 
 $(document).ready(function () {

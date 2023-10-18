@@ -17,6 +17,7 @@ const entryPoints = {
 	decor: path.resolve(__dirname, "src", "index.js"),
 	articles: path.resolve(__dirname, "src", "index.js"),
 	article: path.resolve(__dirname, "src", "index.js"),
+	costumes: path.resolve(__dirname, "src", "index.js"),
 	// chairs: path.resolve(__dirname, 'src', 'index.js'),
 	// tables: path.resolve(__dirname, 'src', 'index.js'),
 	//   contacts: path.resolve(__dirname, 'src', 'index.js'),
