@@ -35,6 +35,7 @@ import "swiper/css/mousewheel";
 import "./js/components/header";
 import "./js/components/footer";
 import "./js/components/modal";
+import "./js/components/uploadFlie";
 import "./js/pages/home";
 import "./js/pages/programs";
 import "./js/pages/decor";
@@ -277,7 +278,7 @@ $(document).ready(function () {
 				if (
 					$(this).scrollTop() > $(".home-programs").position().top &&
 					$(this).scrollTop() <
-						$(".home-programs").position().top + $(".home-programs").height() &&
+					$(".home-programs").position().top + $(".home-programs").height() &&
 					!$(".home-programs").hasClass("playing")
 				) {
 					$(".home-programs").addClass("playing");
