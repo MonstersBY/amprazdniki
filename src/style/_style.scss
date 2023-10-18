@@ -72,14 +72,12 @@
 		display: flex;
 		&-prev {
 			flex: 1;
-			cursor: url(http://localhost:3000/assets/images/cursor-left-white.svg),
-				auto;
+			cursor: url("../assets/images/icon/cursor-left-white.svg"), auto;
 		}
 
 		&-next {
 			flex: 1;
-			cursor: url(http://localhost:3000/assets/images/cursor-right-white.svg),
-				auto;
+			cursor: url("../assets/images/icon/cursor-right-white.svg"), auto;
 		}
 	}
 }

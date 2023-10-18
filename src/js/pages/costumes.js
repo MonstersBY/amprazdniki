@@ -113,17 +113,19 @@ if (window.screen.width < 769) {
 		},
 	});
 
-	navPrev.addEventListener("click", () => {
-		swipers.forEach((slider) => {
-			slider.slidePrev();
+	navPrev &&
+		navPrev.addEventListener("click", () => {
+			swipers.forEach((slider) => {
+				slider.slidePrev();
+			});
+			textSwiper.slidePrev();
+			// slider.slidePrev();
 		});
-		textSwiper.slidePrev();
-		// slider.slidePrev();
-	});
-	navNext.addEventListener("click", () => {
-		swipers.forEach((slider) => {
-			slider.slideNext();
+	navNext &&
+		navNext.addEventListener("click", () => {
+			swipers.forEach((slider) => {
+				slider.slideNext();
+			});
+			textSwiper.slideNext();
 		});
-		textSwiper.slideNext();
-	});
 }
