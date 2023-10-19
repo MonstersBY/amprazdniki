@@ -40,6 +40,7 @@ import "./js/pages/home";
 import "./js/pages/programs";
 import "./js/pages/decor";
 import "./js/pages/costumes";
+import "./js/pages/contacts";
 import "./index.scss";
 
 $(document).ready(function () {

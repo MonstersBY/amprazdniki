@@ -33,7 +33,6 @@ function remToPx(remValue) {
 	// Округляем значение до целых пикселей (по желанию)
 	return Math.round(pxValue) + "px";
 }
-console.log(window.screen.width);
 if (window.screen.width < 769) {
 	const mobText = new Swiper(charactersTextMob, {
 		modules: [Navigation, Pagination, EffectFade],
