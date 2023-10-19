@@ -41,6 +41,7 @@ import "./js/pages/programs";
 import "./js/pages/decor";
 import "./js/pages/costumes";
 import "./js/pages/contacts";
+import "./js/pages/detail_show";
 import "./index.scss";
 
 $(document).ready(function () {
