@@ -1,3 +1,4 @@
+import $ from "jquery";
 import Swiper from "swiper";
 import {
 	Navigation,
@@ -34,5 +35,37 @@ const decorSwiperText = new Swiper('.programs-swiper', {
             slidesPerView: 'auto',
         },
     },
+});
 
+let programs_show
+
+function programsShow() {
+    const cards = document.querySelectorAll('.programs-show-slide')
+    if (screen.width < 769) {
+        cards.forEach(card => {
+            card.classList.add('swiper-slide')
+        })
+        programs_show = new Swiper('.programs-show-swiper', {
+            modules: [Navigation, Pagination, EffectFade],
+            speed: 2000,
+            slidesPerView: 1.065,
+            spaceBetween: `${remToPx(1)}rem`,
+        });
+    } else {
+        cards.forEach(card => {
+            card.classList.remove('swiper-slide')
+          })
+        if(programs_show) {
+            programs_show.forEach(show_swiper => {
+                show_swiper.destroy()
+                show_swiper = undefined
+            })
+        }
+    }
+}
+
+programsShow();
+
+$(window).resize(function () {
+    programsShow();
 });
