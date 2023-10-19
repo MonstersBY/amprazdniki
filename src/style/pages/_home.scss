@@ -69,6 +69,16 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 }
 
 .baner {
+	&.programs-baner {
+		.baner-main-subtitle {
+			left: 51.1rem;
+		}
+	}
+	&.programs-show-baner {
+		.baner-main-subtitle {
+			left: 42.7rem;
+		}
+	}
 	&.white {
 		.black-logo {
 			display: none;
@@ -1248,6 +1258,18 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 
 @media (max-width: 48em) {
 	.baner {
+		&.programs-baner {
+			.baner-main-subtitle {
+				left: initial;
+				right: 18rem;
+			}
+		}
+		&.programs-show-baner {
+			.baner-main-subtitle {
+				left: initial;
+				right: 25rem;
+			}
+		}
 		&.white {
 			.black-logo {
 				display: none;
