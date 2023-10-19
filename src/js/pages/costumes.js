@@ -113,19 +113,21 @@ if (window.screen.width < 769) {
 		},
 	});
 
-	navPrev &&
-		navPrev.addEventListener("click", () => {
-			swipers.forEach((slider) => {
-				slider.slidePrev();
-			});
-			textSwiper.slidePrev();
-			// slider.slidePrev();
-		});
-	navNext &&
-		navNext.addEventListener("click", () => {
-			swipers.forEach((slider) => {
-				slider.slideNext();
-			});
-			textSwiper.slideNext();
-		});
+	navPrev && swipers.length > 0
+		? navPrev.addEventListener("click", () => {
+				swipers.forEach((slider) => {
+					slider.slidePrev();
+				});
+				textSwiper.slidePrev();
+				// slider.slidePrev();
+		  })
+		: null;
+	navNext && swipers.length > 0
+		? navNext.addEventListener("click", () => {
+				swipers.forEach((slider) => {
+					slider.slideNext();
+				});
+				textSwiper.slideNext();
+		  })
+		: null;
 }
