@@ -1,4 +1,8 @@
 .request {
+    &.white {
+        padding: 25rem 0;
+        background: #FFF;
+    }
     .container {
         display: flex;
         align-items: center;
@@ -85,6 +89,9 @@
 
 @media (max-width: 48em) {
     .request {
+        &.white {
+            padding: 26rem 0;
+        }
         .container {
             display: grid;
             align-items: center;
