@@ -21,7 +21,7 @@ const entryPoints = {
 	reviews: path.resolve(__dirname, "src", "index.js"),
 	programs: path.resolve(__dirname, "src", "index.js"),
 	programs_show: path.resolve(__dirname, "src", "index.js"),
-	// tables: path.resolve(__dirname, 'src', 'index.js'),
+	404: path.resolve(__dirname, 'src', 'index.js'),
 	//   contacts: path.resolve(__dirname, 'src', 'index.js'),
 	// Добавьте другие страницы здесь
 };
@@ -158,28 +158,28 @@ module.exports = {
 				use: devMode
 					? []
 					: [
-							{
-								loader: "image-webpack-loader",
-								options: {
-									mozjpeg: {
-										progressive: true,
-									},
-									optipng: {
-										enabled: false,
-									},
-									pngquant: {
-										quality: [0.65, 0.9],
-										speed: 4,
-									},
-									gifsicle: {
-										interlaced: false,
-									},
-									webp: {
-										quality: 75,
-									},
+						{
+							loader: "image-webpack-loader",
+							options: {
+								mozjpeg: {
+									progressive: true,
+								},
+								optipng: {
+									enabled: false,
+								},
+								pngquant: {
+									quality: [0.65, 0.9],
+									speed: 4,
+								},
+								gifsicle: {
+									interlaced: false,
+								},
+								webp: {
+									quality: 75,
 								},
 							},
-					  ],
+						},
+					],
 				type: "asset/resource",
 				generator: {
 					filename: "assets/images/[name][ext]",
