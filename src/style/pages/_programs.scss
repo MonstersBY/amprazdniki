@@ -1,3 +1,7 @@
+$cursor-left-black: url(../../assets/images/icon/cursor-left-black.svg), auto;
+$cursor-right-black: url(../../assets/images/icon/cursor-right-black.svg), auto;
+$cursor-left-white: url(../../assets/images/icon/cursor-left-white.svg), auto;
+$cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 .programs-header {
     overflow: hidden;
     .container {
@@ -101,6 +105,24 @@
     }
     &-swiper {
         overflow: hidden;
+    }
+    &-swiper--prev {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 27rem;
+        z-index: 2;
+		cursor: $cursor-left-black;
+    }
+    &-swiper--next {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 86.5rem;
+        z-index: 2;
+		cursor: $cursor-right-black;
     }
 }
 
@@ -302,6 +324,15 @@
         }
         .swiper-wrapper {
             align-items: flex-end;
+        }
+        &-pagination-number {
+            display: none;
+        }
+        &-swiper--prev {
+            display: none;
+        }
+        &-swiper--next {
+            display: none;
         }
         &-title {
             position: relative;

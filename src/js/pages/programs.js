@@ -22,12 +22,22 @@ function remToPx(remValue) {
     return Math.round(pxValue) + 'px';
 }
 
-const decorSwiperText = new Swiper('.programs-swiper', {
+function countSlider(swip, info) {
+    $(info).each(function(i){
+        var current = $(this).find(".pagination-number--current")
+        swip[i].slides.length < 10 ? $(this).find(".pagination-number--all").html("0" + swip[i].slides.length) : $(this).find(".pagination-number--all").html(swip[i].slides.length)
+        swip[i].realIndex + 1 < 10 ? current.html("0" + (swip[i].realIndex + 1)) : current.html(swip[i].realIndex + 1)
+        swip[i].on("slideChange", function () {
+            swip[i].realIndex + 1 < 10 ? current.html("0" + (swip[i].realIndex + 1)) : current.html(swip[i].realIndex + 1)
+        });
+
+    })
+}
+
+const programsSwiper = new Swiper('.programs-swiper', {
     modules: [Navigation, Pagination, EffectFade],
     speed: 2000,
     slidesPerView: 1.065,
-    // initialSlide: 2,
-    // centeredSlides: true,
     loop: true,
     spaceBetween: `${remToPx(1.9)}rem`,
     breakpoints: {
@@ -36,6 +46,17 @@ const decorSwiperText = new Swiper('.programs-swiper', {
         },
     },
 });
+
+countSlider(programsSwiper, ".programs-pagination-number");
+$(".programs-swiper--prev").on("click", function () {
+    const index = $(".programs-swiper--prev").index(this)
+    programsSwiper[index].slidePrev();
+});
+$(".programs-swiper--next").on("click", function () {
+    const index = $(".programs-swiper--next").index(this)
+    programsSwiper[index].slideNext();
+});
+
 
 if($('.programs-show-slide').length) {
     let programs_show
