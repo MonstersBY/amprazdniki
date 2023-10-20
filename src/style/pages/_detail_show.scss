@@ -206,7 +206,7 @@
         }
     }
     &--left {
-        width: 716px;
+        width: 71.6rem;
     }
     &--title {
         margin-bottom: 5rem;
@@ -577,6 +577,7 @@
     
         }
         &-btn {
+            z-index: 2;
             position: relative;
             right: 0;
             top: 0;
