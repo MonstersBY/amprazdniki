@@ -51,8 +51,15 @@ if($('.detail_food').length) {
                 card.classList.remove('swiper-slide')
               })
             if(detail_food) {
-                detail_food.destroy()
-                detail_food = undefined
+                if(detail_food.length) {
+                    detail_food.forEach(swip => {
+                        swip.destroy()
+                        swip = undefined
+                    })
+                } else {
+                    detail_food.destroy()
+                    detail_food = undefined
+                }
             }
         }
     }
@@ -84,8 +91,15 @@ if($('.detail_decor').length) {
                 card.classList.remove('swiper-slide')
               })
             if(detail_decor) {
-                detail_decor.destroy()
-                detail_decor = undefined
+                if(detail_decor.length) {
+                    detail_decor.forEach(swip => {
+                        swip.destroy()
+                        swip = undefined
+                    })
+                } else {
+                    detail_decor.destroy()
+                    detail_decor = undefined
+                }
             }
         }
     }
@@ -117,8 +131,15 @@ if($('.detail_photo').length) {
                 card.classList.remove('swiper-slide')
               })
             if(detail_photo) {
-                detail_photo.destroy()
-                detail_photo = undefined
+                if(detail_photo.length) {
+                    detail_photo.forEach(swip => {
+                        swip.destroy()
+                        swip = undefined
+                    })
+                } else {
+                    detail_photo.destroy()
+                    detail_photo = undefined
+                }
             }
         }
     }
