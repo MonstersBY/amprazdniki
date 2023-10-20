@@ -101,7 +101,7 @@
                     <img src="./assets/images/detail_show/detail_show-baner3.webp" alt="">
                 </div>
             </div>
-            <div class="detail_show-baner-btn circle-btn regular-4-text regular-3-text--mob wow animate__slideInRight">
+            <div class="detail_show-baner-btn circle-btn regular-4-text regular-3-text--mob wow animate__slideInRight" data-modal="request">
                 <div class="circle-btn--back"></div>
                 <div class="circle-btn--text"><span class="detail_show-baner-btn--first">оставить</span><span class="detail_show-baner-btn--second">заявку</span></div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
@@ -506,7 +506,7 @@
     <div class="request-modal modal">
 		<div class="modal-back"></div>
 		<div class="modal-wrapper">
-			<div class="modal-exit desktop">
+			<div class="modal-exit">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 					<path d="M21 3L3 21" stroke="#292929" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"
 						stroke-linejoin="round" />
@@ -515,55 +515,28 @@
 				</svg>
 			</div>
 			<div class="request-modal__content modal-content">
-				<!-- <div class="food-modal__wrapper">
-					<div class="food-modal__left">
-						<div class="food-modal__title h4-text mobile">торты</div>
-						<div class="food-modal__img">
-							<picture>
-								<source srcset="./assets/images/food/food-modal.webp" type="image/webp">
-								<img src="./assets/images/food/food-modal.png" alt="">
-							</picture>
+				<div class="request-modal__wrapper">
+					<div class="request-modal__left">
+						<div class="request-modal__title regular-1-text--mob mobile">Оставьте заявку, и мы поможем организовать лучший праздник!</div>
+						<div class="request-modal__img">
+                            <img src="./assets/images/home/request.webp" alt="">
 						</div>
 					</div>
-					<div class="food-modal__right">
-						<div class="food-modal__title h4-text desktop">торты</div>
-						<ul class="food-modal__list">
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">01</div>
-								<div class="food-modal__list-item--text">Выбирайте — классический или фантазийный
-									рецепт торта.</div>
-							</li>
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">02</div>
-								<div class="food-modal__list-item--text">Тематический дизайн сладкого стола или
-									кэнди-бара.</div>
-							</li>
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">03</div>
-								<div class="food-modal__list-item--text">Выбор начинок — 15 разных вкусов.</div>
-							</li>
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">04</div>
-								<div class="food-modal__list-item--text">Количество ярусов — от 1 до бесконечности.
-								</div>
-							</li>
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">05</div>
-								<div class="food-modal__list-item--text">Украсим свежими ягодами и фруктами — вкусно
-									и полезно.</div>
-							</li>
-							<li class="food-modal__list-item">
-								<div class="food-modal__list-item--num">06</div>
-								<div class="food-modal__list-item--text">Можем украсить узором и сделать
-									поздравительную надпись.</div>
-							</li>
-						</ul>
-						<div class="food-modal__price">от <span>9 000</span> руб</div>
+					<div class="request-modal__right">
+						<div class="request-modal__title regular-1-text desktop">Оставьте заявку, и мы поможем организовать лучший праздник!</div>
+                        <form class="form">
+                            <label class="form_item">
+                                <input type="text" placeholder="ваше имя">
+                            </label>
+                            <label class="form_item">
+                                <input type="tel" placeholder="+7 (999)-999-99-99">
+                            </label>
+                        </form>
 					</div>
-					<button class="food-modal__btn circle-btn regular-4-text regular-3-text--mob">
+					<button class="request-modal__btn circle-btn regular-4-text regular-3-text--mob">
 						<div class="circle-btn--back"></div>
-						<div class="circle-btn--text"><span class="home-second-slide-btn--first">Получить</span><span
-								class="home-second-slide-btn--second">расчёт</span></div>
+						<div class="circle-btn--text"><span class="home-second-slide-btn--first">отправить</span><span
+								class="home-second-slide-btn--second">заявку</span></div>
 						<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
 							<path d="M36 1.74414L2.23774 35.5064" stroke="#292929" stroke-width="3"
 								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -571,7 +544,7 @@
 								stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
 					</button>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</div>

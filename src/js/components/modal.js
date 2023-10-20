@@ -8,6 +8,9 @@ $(document).ready(function () {
 	$('[data-modal="food"]').on('click', () => {
 		$('.food-modal').addClass('active');
 	});
+	$('[data-modal="request"]').on('click', () => {
+		$('.request-modal').addClass('active');
+	});
 
 	$('[data-modal]').on('click', () => {
 		$('body').addClass('lock');
