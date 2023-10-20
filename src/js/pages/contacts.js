@@ -24,7 +24,5 @@ $(document).ready(function () {
 				spaceBetween: `${remToPx(4.2)}rem`,
 			}
 		}
-
-
 	})
 });
