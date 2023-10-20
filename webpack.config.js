@@ -24,6 +24,7 @@ const entryPoints = {
 	404: path.resolve(__dirname, 'src', 'index.js'),
 	contacts: path.resolve(__dirname, 'src', 'index.js'),
 	detail_show: path.resolve(__dirname, "src", "index.js"),
+	programs_detail: path.resolve(__dirname, "src", "index.js"),
 	// Добавьте другие страницы здесь
 };
 
