@@ -223,7 +223,7 @@
 		// .team-intro__title
 		&__title {
 			text-transform: uppercase;
-			width: 80%;
+			width: 95%;
 		}
 		// .team-intro__hashtag
 		&__hashtag {
@@ -301,6 +301,26 @@
 			width: 100%;
 			height: auto;
 			padding: 0;
+
+			&:hover {
+				transition: none;
+				background: none;
+
+				.team-card__img {
+					transition: none;
+					height: 78.2rem;
+					img {
+						transition: none;
+						object-position: 0;
+					}
+				}
+
+				.team-card__footer {
+					opacity: 0;
+					visibility: hidden;
+					transition: none;
+				}
+			}
 		}
 		// .team-card__img
 		&__img {

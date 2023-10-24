@@ -1,6 +1,16 @@
 import $ from "jquery";
 
 import Swiper from "swiper";
+import {
+	Navigation,
+	Pagination,
+	Autoplay,
+	EffectFade,
+	EffectCoverflow,
+	Thumbs,
+	EffectCreative,
+	Mousewheel,
+} from "swiper/modules";
 
 $(document).ready(function () {
 	function remToPx(remValue) {
@@ -15,6 +25,19 @@ $(document).ready(function () {
 		// Округляем значение до целых пикселей (по желанию)
 		return Math.round(pxValue) + "px";
 	}
+	function countSlider(swip, info) {
+		$(info)
+			.find(".pagination-number--all")
+			.html("0" + swip.slides.length);
+		$(info)
+			.find(".pagination-number--current")
+			.html("0" + (swip.activeIndex + 1));
+		swip.on("slideChange", function () {
+			$(info)
+				.find(".pagination-number--current")
+				.html("0" + (swip.activeIndex + 1));
+		});
+	}
 
 	let programDetailDiff = new Swiper('.program-difficult__swiper', {
 		slidesPerView: 'auto',
@@ -25,6 +48,30 @@ $(document).ready(function () {
 		slidesPerView: 'auto',
 		spaceBetween: `${remToPx(3.2)}rem`,
 	})
+	if ($(".program-detail__banner").length) {
+		let programDetailBanner = new Swiper('.program-detail__banner', {
+			modules: [Navigation, Pagination, EffectFade, Autoplay],
+			speed: 1500,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			effect: "fade",
+			// autoplay: {
+			//     delay: 1000,
+			// },
+			fadeEffect: {
+				crossFade: true,
+			},
+			pagination: {
+				el: ".baner-slider-pagination",
+			},
+		});
+		countSlider(programDetailBanner, ".baner-slider-pagination-number");
+		setTimeout(() => {
+			programDetailBanner.autoplay.start();
+			programDetailBanner.params.autoplay.delay = 2500;
+		}, 1000);
+	}
+
 
 	let separate = document.querySelector('.program-character__separate');
 

@@ -2,6 +2,53 @@
 	.baner-main-subtitle {
 		left: 90rem;
 	}
+	&__container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		height: 106.2rem;
+
+		.baner-main {
+			color: #fff;
+			z-index: 2;
+			&-subtitle {
+				color: #fff;
+				z-index: 2;
+			}
+		}
+		.baner-name {
+			color: #fff;
+			z-index: 2;
+		}
+	}
+	&__banner {
+		.swiper-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.swiper-slide {
+			position: relative;
+			&::after {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 77.53%, rgba(0, 0, 0, 0.2) 100%),
+					linear-gradient(180deg, rgba(0, 0, 0, 0.5) 16.22%, rgba(0, 0, 0, 0) 29.7%),
+					linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+			}
+		}
+		.pagination-number {
+			color: #fff;
+		}
+	}
 }
 .program-difficult {
 	// .program-difficult__inner
@@ -175,7 +222,7 @@
 		font-size: 2rem;
 		line-height: 130%; /* 26px */
 		text-transform: uppercase;
-		transition: all 0.5s ease-in;
+		transition: all 0.8s ease-in;
 		width: 25rem;
 	}
 	&__header {
@@ -229,16 +276,16 @@
 		position: relative;
 		z-index: 1;
 		width: 26.8rem;
-		transition: all 0.5s linear;
+		transition: all 0.8s cubic-bezier(0.49, 0.02, 0.54, 1.01);
 		&--mb {
 			margin-bottom: 10rem;
 		}
 		&.active {
-			transition: all 0.5s linear;
+			transition: all 0.8s cubic-bezier(0.49, 0.02, 0.54, 1.01);
 			width: 86.5rem;
 
 			.program-character__text {
-				transition: all 0.5s linear;
+				transition: all 0.8s ease-in;
 				color: #292929;
 			}
 		}
@@ -279,7 +326,7 @@
 		.baner-main-subtitle {
 			left: unset;
 			right: 10rem;
-			bottom: 34.4rem;
+			bottom: 38.5rem;
 		}
 
 		.baner-main--second {
@@ -289,6 +336,73 @@
 		.baner-main--first {
 			span {
 				margin-left: 12rem;
+			}
+		}
+		.baner-main {
+			bottom: 25rem;
+		}
+
+		&__container {
+			padding: 0;
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			height: 160rem;
+
+			.baner-main {
+				color: #fff;
+				z-index: 2;
+				&-subtitle {
+					color: #fff;
+					z-index: 2;
+				}
+			}
+			.baner-name {
+				color: #fff;
+				z-index: 2;
+			}
+			.baner-btn {
+				z-index: 2;
+				border: 0.3rem solid rgba(255, 255, 255, 0.2);
+				color: #fff;
+
+				svg path {
+					stroke: #fff;
+				}
+			}
+		}
+		&__banner {
+			.swiper-wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.swiper-slide {
+				width: 100%;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+				position: relative;
+				&::after {
+					content: "";
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+
+					background: linear-gradient(180deg, rgba(0, 0, 0, 0) 77.53%, rgba(0, 0, 0, 0.2) 100%),
+						linear-gradient(180deg, rgba(0, 0, 0, 0.5) 16.22%, rgba(0, 0, 0, 0) 29.7%),
+						linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+				}
+			}
+			.pagination-number {
+				color: #fff;
 			}
 		}
 	}
