@@ -1380,20 +1380,25 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			left: 3.2rem;
 			animation-name: baner-mob-left;
 			animation-duration: 3s;
+			font-weight: 300;
+			width: 68.6rem;
 
 			&--second {
 				margin-top: 0.8rem;
-				margin-left: 11rem;
+				margin-left: auto;
 				display: block;
+				width: fit-content;
+    			margin-left: auto;
 			}
 
 			&-subtitle {
 				position: absolute;
 				right: 10rem;
 				left: unset;
-				bottom: 32.4rem;
+				bottom: 34.4rem;
 				animation-name: baner-mob-right;
 				animation-duration: 3s;
+				font-weight: 300;
 			}
 		}
 		&-name {
