@@ -13,9 +13,6 @@
 		&-word {
 			display: flex;
 			&-letter {
-				&:nth-last-of-type(1) {
-					color: #ffffff;
-				}
 			}
 		}
 		&-title {
@@ -223,9 +220,6 @@
 			}
 			&-word {
 				&-letter {
-					&:nth-last-of-type(1) {
-						color: #292929;
-					}
 				}
 			}
 			.banner__quote {
