@@ -11,30 +11,32 @@ function remToPx(remValue) {
     // Округляем значение до целых пикселей (по желанию)
     return Math.round(pxValue) + 'px';
 }
-
-if($('.baner').length) {
-    setTimeout(() => {
-        const main = $('.baner-slide--active')
-        main.addClass('show')
-        // $('.baner-slider-main img').css('top', $('.baner-slide--active').offset().top)
-        // $('.baner-slider-main img').css('left', $('.baner-slide--active').offset().left)
+$(document).ready(function () {
+    if($('.baner').length) {
         setTimeout(() => {
-            $('.baner-slider-main').css('background', main.data('color'))
-            $('.header').removeClass('black')
-            $('.baner').addClass(main.data('baner'))
-            $('.header').addClass(main.data('baner'))
-        }, 1000)
-        setTimeout(() => {
-            $('.baner-slider').addClass('disabled')
-            // $('.baner-slider-main img').css('top', 0)
-            // $('.baner-slider-main img').css('left', 0)
-            $('.baner-slider-main').removeClass('disabled')
+            const main = $('.baner-slide--active')
+            main.addClass('show')
+            // $('.baner-slider-main img').css('top', $('.baner-slide--active').offset().top)
+            // $('.baner-slider-main img').css('left', $('.baner-slide--active').offset().left)
             setTimeout(() => {
-                $('.baner-slider-main').addClass('showed')
-            }, 250)
-        }, 2000)
-    }, 3000)
-}
+                $('.baner-slider-main').css('background', main.data('color'))
+                $('.header').removeClass('black')
+                $('.baner').addClass(main.data('baner'))
+                $('.header').addClass(main.data('baner'))
+            }, 1000)
+            setTimeout(() => {
+                $('.baner-slider').addClass('disabled')
+                // $('.baner-slider-main img').css('top', 0)
+                // $('.baner-slider-main img').css('left', 0)
+                $('.baner-slider-main').removeClass('disabled')
+                setTimeout(() => {
+                    $('.baner-slider-main').addClass('showed')
+                }, 250)
+            }, 2000)
+        }, 3000)
+    }
+})
+
 
 $(document).ready(function(){
     if (screen.width > 769) {
@@ -58,7 +60,7 @@ $(document).ready(function(){
                 if (scroll > item.positionTop && (scroll <= item.positionBottom || i === slides.length - 1)) {
                     item.el.css('transform', `translateY(${-20 * i}rem)`);
                 } else if (scroll > item.positionBottom && i !== slides.length - 1) {
-                    item.el.css('transform', `translateY(calc(-100vh - ${20 * i}rem))`);
+                    // item.el.css('transform', `translateY(calc(-100vh - ${20 * i}rem))`);
                 } else {
                     item.el.css('transform', 'translateY(100vh)');
                 }

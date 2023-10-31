@@ -118,6 +118,9 @@
 	.contacts {
 		margin-top: 10.2rem;
 		padding-top: 12rem;
+		&__meta {
+			padding: 0 3.2rem;
+		}
 		&__container {
 			padding: 0;
 		}
