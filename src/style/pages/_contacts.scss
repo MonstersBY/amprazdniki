@@ -2,6 +2,9 @@
 	margin-top: 6.7rem;
 	padding-top: 12rem;
 	overflow: hidden;
+	&__meta {
+		text-transform: uppercase;
+	}
 	// .contacts__inner
 	&__inner {
 		display: flex;
@@ -120,6 +123,7 @@
 		padding-top: 12rem;
 		&__meta {
 			padding: 0 3.2rem;
+			text-transform: unset;
 		}
 		&__container {
 			padding: 0;
