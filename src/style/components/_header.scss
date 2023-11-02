@@ -1,6 +1,6 @@
 #bx-panel {
 	& ~ .header {
-		top: 14.7rem;
+		top: 147px;
 	}
 }
 .header {
@@ -101,11 +101,6 @@
 }
 
 @media (max-width: 48em) {
-	#bx-panel {
-		& ~ .header {
-			top: 29.4rem;
-		}
-	}
 	.header {
 		position: absolute;
 		top: 0;
