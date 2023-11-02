@@ -1459,10 +1459,11 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				}
 			}
 			&-center {
-				width: 100%;
+				width: 64rem;
 				height: 80rem;
 				position: relative;
 				text-transform: uppercase;
+				margin-right: 0;
 				margin-bottom: 4rem;
 
 				&--img {
