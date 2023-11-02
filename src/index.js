@@ -328,6 +328,7 @@ $(document).ready(function () {
 			modules: [Navigation, Pagination, EffectCreative],
 			speed: 2000,
 			slidesPerView: 1,
+			loop: true,
 			spaceBetween: `${remToPx(1.5)}rem`,
 			pagination: {
 				el: ".home-review-pagination",
@@ -353,6 +354,7 @@ $(document).ready(function () {
 		modules: [Navigation, Pagination, EffectCreative],
 		speed: 2000,
 		slidesPerView: 1,
+		loop: true,
 		spaceBetween: `${remToPx(1.5)}rem`,
 		effect: "creative",
 		creativeEffect: {
@@ -369,6 +371,7 @@ $(document).ready(function () {
 		modules: [Navigation, Pagination, EffectFade],
 		speed: 2000,
 		slidesPerView: 1,
+		loop: true,
 		spaceBetween: `${remToPx(1.5)}rem`,
 		effect: "fade",
 		fadeEffect: {
