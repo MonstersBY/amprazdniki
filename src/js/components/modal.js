@@ -11,6 +11,9 @@ $(document).ready(function () {
 	$('[data-modal="request"]').on('click', () => {
 		$('.request-modal').addClass('active');
 	});
+	$('[data-modal="decor"]').on('click', () => {
+		$('.decor-modal').addClass('active');
+	});
 
 	$('[data-modal]').on('click', () => {
 		$('body').addClass('lock');
