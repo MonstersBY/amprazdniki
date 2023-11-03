@@ -677,20 +677,20 @@
 				text-transform: uppercase;
 				text-align: initial;
 			}
-		}
-		.decor__wrapper-right {
-			padding-bottom: 25.8rem;
-		}
-		.decor__text-left {
-			display: flex;
-			flex-direction: column;
-			gap: 1.6rem;
-			text-transform: uppercase;
-		}
-		.decor__text-btn {
-			z-index: 2;
-			bottom: 2rem;
-			right: 0;
+			.decor__wrapper-right {
+				padding-bottom: 25.8rem;
+			}
+			.decor__text-left {
+				display: flex;
+				flex-direction: column;
+				gap: 1.6rem;
+				text-transform: uppercase;
+			}
+			.decor__text-btn {
+				z-index: 2;
+				bottom: 2rem;
+				right: 0;
+			}
 		}
 	}
 
