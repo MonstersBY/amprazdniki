@@ -1,7 +1,4 @@
 .program-detail {
-	.baner-main-subtitle {
-		left: 90rem;
-	}
 	&__container {
 		position: relative;
 		width: 100%;
@@ -48,6 +45,21 @@
 		.pagination-number {
 			color: #fff;
 		}
+	}
+	.baner-main-subtitle {
+		bottom: 0.5rem;
+		left: auto;
+		right: -18rem;
+	}
+	.baner-main--first {
+		position: relative;
+		width: fit-content;
+	}
+	.baner-main--first_main {
+		max-width: 85rem;
+	}
+	.baner-main--second {
+		width: 93rem;
 	}
 }
 .program-difficult {
@@ -323,10 +335,27 @@
 
 @media (max-width: 48em) {
 	.program-detail {
+		.baner-main {
+			animation-name: unset;
+		}
 		.baner-main-subtitle {
 			left: unset;
-			right: 10rem;
-			bottom: 38.5rem;
+			right: -24rem;
+			bottom: 0.5rem;		
+		}
+		.baner-main--first {
+			position: relative;
+			width: fit-content;
+		}
+		.baner-main--first_main {
+			max-width: 45rem;
+			animation-name: baner-mob-left;
+			animation-duration: 3s;
+		}
+		.baner-main--second {
+			width: fit-content;
+			animation-name: baner-mob-left;
+			animation-duration: 3s;
 		}
 
 		.baner-main--second {

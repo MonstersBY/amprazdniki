@@ -153,6 +153,11 @@
 				width: 65.2rem;
 				height: 80.6rem;
 			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		&-text {
 			position: absolute;
