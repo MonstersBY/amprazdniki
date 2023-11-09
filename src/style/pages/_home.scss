@@ -79,6 +79,11 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 			left: 42.7rem;
 		}
 	}
+	&.animate-baner {
+		.baner-main-subtitle {
+			left: 123.1rem;
+		}
+	}
 	&.white {
 		.black-logo {
 			display: none;
@@ -1270,6 +1275,15 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				right: 25rem;
 			}
 		}
+		&.animate-baner {
+			.baner-main-subtitle {
+				display: none;
+			}
+			.baner-btn {
+				top: 45.8rem;
+			}
+		}
+		
 		&.white {
 			.black-logo {
 				display: none;

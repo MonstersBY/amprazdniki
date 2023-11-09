@@ -25,6 +25,7 @@ const entryPoints = {
 	contacts: path.resolve(__dirname, 'src', 'index.js'),
 	detail_show: path.resolve(__dirname, "src", "index.js"),
 	programs_detail: path.resolve(__dirname, "src", "index.js"),
+	animators: path.resolve(__dirname, "src", "index.js"),
 	// Добавьте другие страницы здесь
 };
 
