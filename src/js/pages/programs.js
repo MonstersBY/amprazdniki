@@ -23,15 +23,25 @@ function remToPx(remValue) {
 }
 
 function countSlider(swip, info) {
-    $(info).each(function(i){
-        var current = $(this).find(".pagination-number--current")
-        swip[i].slides.length < 10 ? $(this).find(".pagination-number--all").html("0" + swip[i].slides.length) : $(this).find(".pagination-number--all").html(swip[i].slides.length)
-        swip[i].realIndex + 1 < 10 ? current.html("0" + (swip[i].realIndex + 1)) : current.html(swip[i].realIndex + 1)
-        swip[i].on("slideChange", function () {
+    if($(info).length == 1) {
+        $(info).each(function(i){
+            var current = $(this).find(".pagination-number--current")
+            swip.slides.length < 10 ? $(this).find(".pagination-number--all").html("0" + swip.slides.length) : $(this).find(".pagination-number--all").html(swip.slides.length)
+            swip.realIndex + 1 < 10 ? current.html("0" + (swip.realIndex + 1)) : current.html(swip.realIndex + 1)
+            swip.on("slideChange", function () {
+                swip.realIndex + 1 < 10 ? current.html("0" + (swip.realIndex + 1)) : current.html(swip.realIndex + 1)
+            });
+        })
+    } else {
+        $(info).each(function(i){
+            var current = $(this).find(".pagination-number--current")
+            swip[i].slides.length < 10 ? $(this).find(".pagination-number--all").html("0" + swip[i].slides.length) : $(this).find(".pagination-number--all").html(swip[i].slides.length)
             swip[i].realIndex + 1 < 10 ? current.html("0" + (swip[i].realIndex + 1)) : current.html(swip[i].realIndex + 1)
-        });
-
-    })
+            swip[i].on("slideChange", function () {
+                swip[i].realIndex + 1 < 10 ? current.html("0" + (swip[i].realIndex + 1)) : current.html(swip[i].realIndex + 1)
+            });
+        })
+    }
 }
 
 const programsSwiper = new Swiper('.programs-swiper', {
