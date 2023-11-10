@@ -129,9 +129,18 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
     }
     &-btn {
         position: absolute;
-        right: 42rem;
-        top: 8rem;
+        right: 7rem;
+        top: 9rem;
         z-index: 2;
+        width: 27.1rem;
+        height: 27.1rem;
+
+        .circle-btn--text {
+            top: 8.8rem;
+        }
+        .circle-btn svg {
+            bottom: 6.8rem;
+        }
     }
     .pagination-number {
         margin-bottom: 10rem;
