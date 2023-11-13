@@ -59,12 +59,20 @@ const programsSwiper = new Swiper('.programs-swiper', {
 
 countSlider(programsSwiper, ".programs-pagination-number");
 $(".programs-swiper--prev").on("click", function () {
-    const index = $(".programs-swiper--prev").index(this)
-    programsSwiper[index].slidePrev();
+    if($(".programs-pagination-number").length == 1) {
+        programsSwiper.slidePrev();
+    } else {
+        const index = $(".programs-swiper--prev").index(this)
+        programsSwiper[index].slidePrev();
+    }
 });
 $(".programs-swiper--next").on("click", function () {
-    const index = $(".programs-swiper--next").index(this)
-    programsSwiper[index].slideNext();
+    if($(".programs-pagination-number").length == 1) {
+        programsSwiper.slideNext();
+    } else {
+        const index = $(".programs-swiper--next").index(this)
+        programsSwiper[index].slideNext();
+    }
 });
 
 
