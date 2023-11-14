@@ -13,27 +13,39 @@ function remToPx(remValue) {
 }
 $(document).ready(function () {
     if($('.baner').length) {
-        setTimeout(() => {
-            const main = $('.baner-slide--active')
-            main.addClass('show')
-            // $('.baner-slider-main img').css('top', $('.baner-slide--active').offset().top)
-            // $('.baner-slider-main img').css('left', $('.baner-slide--active').offset().left)
+        if(!localStorage.getItem('enter')) {
             setTimeout(() => {
-                $('.baner-slider-main').css('background', main.data('color'))
-                $('.header').removeClass('black')
-                $('.baner').addClass(main.data('baner'))
-                $('.header').addClass(main.data('baner'))
-            }, 1000)
-            setTimeout(() => {
-                $('.baner-slider').addClass('disabled')
-                // $('.baner-slider-main img').css('top', 0)
-                // $('.baner-slider-main img').css('left', 0)
-                $('.baner-slider-main').removeClass('disabled')
+                const main = $('.baner-slide--active')
+                main.addClass('show')
+                // $('.baner-slider-main img').css('top', $('.baner-slide--active').offset().top)
+                // $('.baner-slider-main img').css('left', $('.baner-slide--active').offset().left)
                 setTimeout(() => {
-                    $('.baner-slider-main').addClass('showed')
-                }, 250)
-            }, 2000)
-        }, 3000)
+                    $('.baner-slider-main').css('background', main.data('color'))
+                    $('.header').removeClass('black')
+                    $('.baner').addClass(main.data('baner'))
+                    $('.header').addClass(main.data('baner'))
+                }, 1000)
+                setTimeout(() => {
+                    $('.baner-slider').addClass('disabled')
+                    // $('.baner-slider-main img').css('top', 0)
+                    // $('.baner-slider-main img').css('left', 0)
+                    $('.baner-slider-main').removeClass('disabled')
+                    setTimeout(() => {
+                        $('.baner-slider-main').addClass('showed')
+                        localStorage.setItem('enter', 1);
+                    }, 250)
+                }, 2000)
+            }, 3000)
+        } else {
+            $('.baner-slide--active').addClass('show')
+            $('.header').removeClass('black')
+            $('.header').addClass('white')
+            $('.baner').addClass('white')
+            $('.baner-slider').css('display','none')
+            $('.baner-slider-main').removeClass('disabled')
+            $('.baner-slider-main').addClass('showed')
+        }
+
     }
 })
 
