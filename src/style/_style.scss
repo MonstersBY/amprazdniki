@@ -201,6 +201,26 @@ body {
 	}
 }
 
+.successfully-modal {
+	.detail-modal__right {
+		padding: 1.8rem 18.8rem 1.8rem 0;
+	}
+	.detail-modal__text {
+		font-size: 2.4rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%;
+		text-transform: uppercase;
+		color: #949494;
+	}
+	.home-second-slide-btn--first {
+		width: max-content;
+	}
+	.detail-modal__btn .circle-btn--text {
+		width: 13.8rem;
+	}
+}
+
 @media (max-width: 48em) {
 	.h1-text {
 		font-size: 10rem;
@@ -286,6 +306,22 @@ body {
 	}
 	.pagination-number {
 		display: none;
+	}
+
+	.successfully-modal {
+		.detail-modal__right {
+			padding: 0;
+		}
+		.detail-modal__text {
+			font-size: 3.6rem;
+			line-height: 110%;
+		}
+		.detail-modal__btn .circle-btn--text {
+			width: 23.8rem;
+		}
+		.detail-modal__title {
+			padding-right: 15rem;
+		}
 	}
 }
 @media (min-width: 48.01em) {
