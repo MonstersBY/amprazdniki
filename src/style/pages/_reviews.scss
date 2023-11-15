@@ -72,6 +72,7 @@
 	grid-auto-flow: row dense;
 }
 .review-item {
+	cursor: pointer;
 	background-color: #fff;
 
 	&--photo {
@@ -454,11 +455,11 @@
 }
 .is-horizontal .f-carousel__nav .f-button.is-next,
 .is-horizontal .fancybox__nav .f-button.is-next {
-	right: 20rem;
+	right: 10rem;
 }
 .is-horizontal .f-carousel__nav .f-button.is-prev,
 .is-horizontal .fancybox__nav .f-button.is-prev {
-	left: 20rem;
+	left: 10rem;
 }
 .has-map .fancybox__content,
 .has-pdf .fancybox__content,
@@ -488,6 +489,59 @@
 		width: 3.5rem;
 		height: 6.5rem;
 		stroke-width: 0.01rem;
+	}
+}
+
+.review-text-modal {
+	&.fancybox__content {
+		padding: 6rem;
+	}
+	.review-item__content {
+		height: auto;
+		max-width: 80.9rem;
+	}
+	.review-item__main {
+		margin-bottom: 4rem;
+	}
+	.review-item__text {
+		width: 100%;
+		text-overflow: unset;
+		overflow: visible;
+		display: block;
+
+		p:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.review-photo-modal {
+	display: flex !important;
+	flex-direction: row;
+	gap: 5rem;
+	&.fancybox__content {
+		padding: 3.2rem;
+	}
+	.review-item__img {
+		width: 50rem;
+		height: 100%;
+	}
+	.review-item__content {
+		max-width: 80.9rem;
+		padding: 1.8rem 0;
+	}
+	.review-item__main {
+		margin-bottom: 4rem;
+	}
+	.review-item__text {
+		width: 69.5rem;
+		text-overflow: unset;
+		overflow: visible;
+		display: block;
+
+		p:not(:last-child) {
+			margin-bottom: 1rem;
+		}
 	}
 }
 
@@ -846,6 +900,69 @@
 			&.is-current {
 				background: #292929;
 			}
+		}
+	}
+	.review-text-modal {
+		width: 68.6rem;
+		&.fancybox__content {
+			padding: 6.4rem 3.2rem;
+			max-height: 85vh;
+			overflow: auto;
+		}
+		.review-item__content {
+			max-width: 100%;
+		}
+		.review-item__main {
+			margin-bottom: 0;
+		}
+		.review-item__text {
+			width: 100%;
+			text-overflow: unset;
+			display: block;
+
+			p:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+		.review-item__footer {
+			padding-bottom: 6.4rem;
+		}
+	}
+
+	.review-photo-modal {
+		width: 68.6rem;
+
+		display: flex !important;
+		flex-direction: column;
+		gap: 5rem;
+
+		&.fancybox__content {
+			padding: 12.8rem 3.2rem;
+			max-height: 85vh;
+			overflow: auto;
+		}
+		.review-item__img {
+			width: 100%;
+			height: 100%;
+		}
+		.review-item__content {
+			max-width: 100%;
+			padding: 0;
+		}
+		.review-item__main {
+			margin-bottom: 4rem;
+		}
+		.review-item__text {
+			width: 100%;
+			text-overflow: unset;
+			display: block;
+
+			p:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+		.review-item__footer {
+			padding-bottom: 12.8rem;
 		}
 	}
 }
