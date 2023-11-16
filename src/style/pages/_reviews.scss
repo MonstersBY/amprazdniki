@@ -493,8 +493,10 @@
 }
 
 .review-text-modal {
+	display: none;
 	&.fancybox__content {
 		padding: 6rem;
+		display: block;
 	}
 	.review-item__content {
 		height: auto;
@@ -516,11 +518,12 @@
 }
 
 .review-photo-modal {
-	display: flex !important;
+	display: none;
 	flex-direction: row;
 	gap: 5rem;
 	&.fancybox__content {
 		padding: 3.2rem;
+		display: flex !important;
 	}
 	.review-item__img {
 		width: 50rem;
