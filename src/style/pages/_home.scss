@@ -581,7 +581,7 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		z-index: 1;
 	}
 	&--title {
-		margin-bottom: 26.4rem;
+		margin-bottom: 22.4rem;
 		text-transform: uppercase;
 	}
 	&-info {
@@ -589,11 +589,13 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		&--title {
 			margin-bottom: 3.2rem;
 		}
-		&--text {
-			padding-bottom: 5.2rem;
-			margin-bottom: 7.2rem;
+		&--link {
+			display: block;
+			margin-bottom: 12.4rem;
 			position: relative;
-			color: rgba(41, 41, 41, 0.5);
+			width: fit-content;
+			color: #b684b3;
+  			border-bottom: .1rem solid #b684b3;
 
 			&::after {
 				content: "";
@@ -603,8 +605,13 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 				background: #292929;
 				position: absolute;
 				left: 0;
-				bottom: 0;
+				bottom: -5.2rem;
 			}
+
+		}
+		&--text {
+			margin-bottom: 1.6rem;
+			color: rgba(41, 41, 41, 0.5);
 		}
 		&--price {
 			margin-bottom: 1.8rem;
@@ -1625,17 +1632,22 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             &--title {
                 margin-bottom: 1.6rem;
             }
-            &--text {
-                padding-bottom: 0;
-                margin-bottom: 5.6rem;
-                position: relative;
-                color: rgba(41, 41, 41, 0.5);
-                text-transform: unset;
-    
-                &::after {
+			&--link {
+				display: block;
+				margin-bottom: 5.6rem;
+				position: relative;
+				width: fit-content;
+				border-bottom: .2rem solid #b684b3;
+	
+				&::after {
                     content: unset;
                 }
-            }
+	
+			}
+			&--text {
+				margin-bottom: 1.6rem;
+				color: rgba(41, 41, 41, 0.5);
+			}
             &--price {
                 margin-bottom: 1.8rem;
                 display: flex;

@@ -548,6 +548,22 @@
 	}
 }
 
+.review-photo-modal {
+	.review-item__img {
+		position: relative;
+
+		img {
+			position: absolute;
+			transform: z-index 0.5s ease-in-out, opacity 0.5s ease-in-out;
+			z-index: 1;
+			opacity: 0;
+			&:nth-child(1) {
+				opacity: 1;
+			}
+		}
+	}
+}
+
 @media (max-width: 48em) {
 	.reviews-intro {
 		margin: 10rem 0 0;
@@ -935,7 +951,6 @@
 	.review-photo-modal {
 		width: 68.6rem;
 
-		display: flex !important;
 		flex-direction: column;
 		gap: 5rem;
 

@@ -49,6 +49,7 @@ const programsSwiper = new Swiper('.programs-swiper', {
     speed: 2000,
     slidesPerView: 1.065,
     loop: true,
+    // mousewheel: true,
     spaceBetween: `${remToPx(1.9)}rem`,
     breakpoints: {
         769: {
@@ -110,3 +111,56 @@ if($('.programs-show-slide').length) {
         programsShow();
     });
 }
+// if($('.review-photo-modal').length) {
+//     $('.review-photo-modal').each(function (id_modal) {
+//         // $(this).find('.review-item__img').find('img').each(function (id) {
+//         //     $(this).css('opacity', 1)
+//         //     setInterval(changeImage, 1000);
+//         // })
+
+//         var images = $(this)[0].getElementsByTagName('img');
+//         var cur = images.length - 1; 
+//         var top = 1; 
+
+//         setInterval(changeImage, 5000); 
+
+//         async function changeImage() { 
+      
+//             var nextImage = (1 + cur) % images.length; 
+      
+//             images[cur].style.zIndex = top + 1; 
+//             images[nextImage].style.zIndex = top; 
+      
+//             await transition(); 
+    
+//             images[cur].style.zIndex = top; 
+      
+//             images[nextImage].style.zIndex = top + 1; 
+      
+//             top = top + 1; 
+      
+//             images[cur].style.opacity = 1; 
+      
+//             cur = nextImage; 
+//         } 
+    
+//         function transition() { 
+//             return new Promise(function (resolve, reject) { 
+      
+//                 var del = 0.01; 
+      
+//                 var id = setInterval(changeOpacity, 10); 
+      
+//                 function changeOpacity() { 
+//                     images[cur].style.opacity -= del; 
+//                     if (images[cur].style.opacity <= 0) { 
+//                         clearInterval(id); 
+//                         resolve(); 
+//                     } 
+//                 } 
+//             }) 
+//         } 
+//     })
+    
+// } 
+
