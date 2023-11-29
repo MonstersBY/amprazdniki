@@ -562,6 +562,27 @@
 			}
 		}
 	}
+	&--main {
+		&-container {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+		}
+
+		.review-photo-modal--title {
+			text-align: center;
+			font-size: 3.8rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 110%;
+			text-transform: uppercase;
+		}
+		.review-photo-modal-btn {
+			position: absolute;
+			right: -30rem;
+			bottom: 0;
+		}
+	}
 }
 
 @media (max-width: 48em) {
@@ -954,6 +975,8 @@
 		flex-direction: column;
 		gap: 5rem;
 
+
+
 		&.fancybox__content {
 			padding: 12.8rem 3.2rem;
 			max-height: 85vh;
@@ -982,5 +1005,30 @@
 		.review-item__footer {
 			padding-bottom: 12.8rem;
 		}
+
+		&--main {
+			&-container {
+				display: flex;
+				flex-direction: column;
+				gap: 3rem;
+			}
+	
+			.review-photo-modal--title {
+				text-align: center;
+				font-size: 4rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 110%;
+				text-transform: uppercase;
+			}
+			.review-photo-modal-btn {
+				flex: none;
+				margin: auto;
+				position: relative;
+				right: unset;
+				bottom: unset;
+			}
+		}
 	}
+
 }

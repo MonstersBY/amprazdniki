@@ -567,6 +567,147 @@ $(document).ready(function () {
 		mainCommandSwiper();
 	});
 
+	$(".home-command-slide-other").each(function (i) {
+		(i + 1) % 2 ? $(this).data("rot", 30) : $(this).data("rot", -30);
+	});
+	let home_command_swiper_other;
+	function mainCommandSwiperOther() {
+		if (screen.width < 769) {
+			if ($(".home-command-swiper-other").data("platform") == "desktop") {
+				$(".home-second-swiper").data("platform", "mobile");
+				home_second.destroy();
+				home_command_swiper_other = new Swiper(".home-command-swiper-other", {
+					modules: [Navigation, Pagination, EffectFade, EffectCreative],
+					speed: 1500,
+					slidesPerView: 1,
+					spaceBetween: 300,
+					pagination: {
+						el: ".home-command-pagination-other",
+					},
+					effect: "fade",
+					fadeEffect: {
+						crossFade: true,
+					},
+				});
+			}
+		} else {
+			if ($(".home-command-swiper").data("platform") == "mobile") {
+				$(".home-second-swiper").data("platform", "desktop");
+				home_second.destroy();
+				home_command_swiper_other = new Swiper(".home-command-swiper-other", {
+					modules: [Navigation, Pagination, EffectFade, EffectCreative],
+					direction: "vertical",
+					speed: 1500,
+					slidesPerView: 1,
+					spaceBetween: 300,
+					pagination: {
+						el: ".home-command-pagination-other",
+					},
+					effect: "creative",
+					creativeEffect: {
+						prev: {
+							translate: [0, "-200%", 0],
+							rotate: [0, 0, 0],
+						},
+						next: {
+							translate: [0, 0, -1],
+							rotate: [0, 0, 0],
+						},
+					},
+				});
+			}
+		}
+	}
+	if (!$(".home-command-swiper-other").data("platform")) {
+		screen.width < 769
+			? $(".home-second-swiper").data("platform", "mobile")
+			: $(".home-second-swiper").data("platform", "desktop");
+	}
+	mainCommandSwiperOther();
+	if (screen.width < 769) {
+		home_command_swiper_other = new Swiper(".home-command-swiper-other", {
+			modules: [Navigation, Pagination, EffectFade, EffectCreative],
+			speed: 1500,
+			slidesPerView: 1,
+			spaceBetween: 300,
+			pagination: {
+				el: ".home-command-pagination-other",
+			},
+			effect: "fade",
+			fadeEffect: {
+				crossFade: true,
+			},
+		});
+	} else {
+		home_command_swiper_other = new Swiper(".home-command-swiper-other", {
+			modules: [Navigation, Pagination, EffectFade, EffectCreative],
+			direction: "vertical",
+			speed: 1500,
+			slidesPerView: 1,
+			spaceBetween: 300,
+			pagination: {
+				el: ".home-command-pagination-other",
+			},
+			effect: "creative",
+			creativeEffect: {
+				prev: {
+					translate: [0, "-200%", 0],
+					rotate: [0, 0, 0],
+				},
+				next: {
+					translate: [0, 0, -1],
+					rotate: [0, 0, 0],
+				},
+			},
+		});
+		countSlider(home_command_swiper_other, ".home-command-pagination-number-other");
+	}
+
+	countSlider(home_command_swiper_other, ".home-command-pagination-number-other");
+	const home_command_text_other = new Swiper(".home-command-swiper--text-other", {
+		modules: [Navigation, Pagination, EffectFade, Thumbs],
+		speed: 1500,
+		slidesPerView: 1,
+		spaceBetween: 300,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true,
+		},
+	});
+	const home_command_buttons_swiper = new Swiper(".home-command-buttons-swiper", {
+		modules: [EffectFade],
+		speed: 1500,
+		slidesPerView: 1,
+		spaceBetween: 300,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true,
+		},
+	});
+	home_command_swiper_other.on("slideChange", function () {
+		home_command_text_other.slideTo(this.activeIndex, 2000);
+		home_command_buttons_swiper.slideTo(this.activeIndex, 2000);
+	});
+	home_command_text_other.on("slideChange", function () {
+		home_command_swiper_other.slideTo(this.activeIndex, 2000);
+		home_command_buttons_swiper.slideTo(this.activeIndex, 2000);
+	});
+	$(".home-command-swiper-btns--right-other").on("click", function () {
+		const deg = $(".home-command-slide-other.swiper-slide-active").data("rot");
+		home_command_swiper_other.params.creativeEffect.prev.rotate = [0, 0, deg];
+		home_command_swiper_other.slideNext();
+		home_command_swiper_other.init();
+	});
+	$(".home-command-swiper-btns--left-other").on("click", function () {
+		const deg = $(".home-command-slide-other.swiper-slide-active").data("rot");
+		home_command_swiper_other.params.creativeEffect.prev.rotate = [0, 0, deg];
+		home_command_swiper_other.slidePrev();
+		home_command_swiper_other.init();
+	});
+	$(window).resize(function () {
+		mainCommandSwiperOther();
+	});
+
 	if (screen.width < 769) {
 		const home_advantages_swiper = new Swiper(".home-advantages-swiper", {
 			modules: [Navigation, Pagination],
