@@ -1267,6 +1267,26 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 	}
 }
 
+.home-client {
+	&--title {
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 5rem;
+	}
+
+	&--swiper {
+		overflow: hidden;
+	}
+	&--slide {
+		width: 45rem;
+		cursor: pointer;
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
 
 @media (max-width: 48em) {
 	.baner {
