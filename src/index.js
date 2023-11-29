@@ -577,4 +577,32 @@ $(document).ready(function () {
 			},
 		});
 	}
+
+	const home_client_swiper = new Swiper(".home-client--swiper", {
+		modules: [Navigation, Pagination, EffectCoverflow],
+		speed: 2000,
+		slidesPerView: 'auto',
+		centeredSlides: true,
+		effect: "coverflow",
+		loop: true,
+		coverflowEffect: {
+			rotate: 0,
+			stretch: 0,
+			depth: 300,
+			modifier: 1,
+			slideShadows: false,
+			scale: 1.12,
+		},
+		breakpoints: {
+			slidesPerView: 4,
+			coverflowEffect: {
+				rotate: 0,
+				stretch: 0,
+				depth: 1000,
+				modifier: 2,
+				slideShadows: false,
+				scale: 1.7,
+			},
+		},
+	});
 });

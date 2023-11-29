@@ -9,6 +9,7 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@600&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 	<title>Главная</title>
 </head>
 
@@ -408,6 +409,7 @@
 							<div class="home-programs-info--text regular-4-text regular-2-text--mob">Захватывающее
 								приключение, полное
 								веселья и фантазии, вдохновленное знаменитой книгой и фильмами "Джуманджи"</div>
+							<a href="" class="home-programs-info--link regular-4-text regular-2-text--mob">Подробнее</a>
 							<div class="home-programs-info--price regular-1-text">от <strong class="h3-text">10
 									000</strong> руб</div>
 							<div class="home-programs-info--last regular-3-text ">Цена</div>
@@ -542,6 +544,52 @@
 				</div>
 			</div>
 			<div class="home-advantages-pagination"></div>
+		</div>
+	</section>
+	<section class="home-client">
+		<div class="container">
+			<div class="home-client--title h2-text">Довольные клиенты</div>
+			<div class="home-client--swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client1.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client2.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client3.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client1.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client2.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client3.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client1.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client2.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client3.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client1.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client2.jpg" alt="" data-fancybox="gallery">
+					</div>
+					<div class="swiper-slide home-client--slide">
+						<img src="./assets/images/home/client3.jpg" alt="" data-fancybox="gallery">
+					</div>
+					
+				</div>
+			</div>
 		</div>
 	</section>
 	<section class="home-holiday">
@@ -1057,6 +1105,43 @@
 		</div>
 		<div class="footer__hashtag">#amprazdniki <span class="desktop">#amprazdniki</span></div>
 	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+	<script>
+		Fancybox.bind("[data-fancybox]", {
+			closeButton: true,
+			Thumbs: false,
+			Carousel: {
+				center: true,
+				Dots: {
+					minCount: 2,
+					classes: {
+						list: "f-carousel__dots",
+						isDynamic: "is-dynamic",
+						hasDots: "has-dots",
+						dot: "f-carousel__dot",
+						isBeforePrev: "is-before-prev",
+						isPrev: "is-prev",
+						isCurrent: "is-current",
+						isNext: "is-next",
+						isAfterNext: "is-after-next",
+					},
+					dotTpl: `<button type="button" data-carousel-page="%i" aria-label="{{GOTO}}"><span class="f-carousel__dot" aria-hidden="true"></span></button>`,
+				},
+				Navigation: {
+					prevTpl:
+						`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="65" viewBox="0 0 35 65" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.377315 32.4077C0.377315 32.7519 0.656371 33.031 1.0006 33.031L33.4776 33.031C33.8219 33.031 34.1009 32.752 34.1009 32.4077C34.1009 32.0635 33.8219 31.7844 33.4776 31.7844L1.0006 31.7844C0.656371 31.7844 0.377315 32.0635 0.377315 32.4077Z" fill="#292929"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.559872 31.967C0.316463 32.2104 0.316463 32.605 0.559872 32.8484L14.9668 47.2554C15.2102 47.4988 15.6049 47.4988 15.8483 47.2554C16.0917 47.012 16.0917 46.6173 15.8483 46.3739L1.88207 32.4077L15.8483 18.4415C16.0917 18.1981 16.0917 17.8034 15.8483 17.56C15.6049 17.3166 15.2102 17.3166 14.9668 17.56L0.559872 31.967Z" fill="#292929"/>
+</svg>`,
+					nextTpl:
+						`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="65" viewBox="0 0 35 65" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M34.0992 32.4077C34.0992 32.0635 33.8202 31.7844 33.476 31.7844L0.998929 31.7844C0.654696 31.7844 0.375641 32.0635 0.37564 32.4077C0.375641 32.7519 0.654696 33.031 0.998929 33.031L33.476 33.031C33.8202 33.031 34.0992 32.7519 34.0992 32.4077Z" fill="#292929"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M33.9167 32.8484C34.1601 32.605 34.1601 32.2104 33.9167 31.967L19.5097 17.56C19.2663 17.3166 18.8717 17.3166 18.6283 17.56C18.3849 17.8034 18.3849 18.1981 18.6283 18.4415L32.5945 32.4077L18.6283 46.3739C18.3849 46.6173 18.3849 47.012 18.6283 47.2554C18.8717 47.4988 19.2663 47.4988 19.5097 47.2554L33.9167 32.8484Z" fill="#292929"/>
+</svg>`,
+				},
+			},
+		});
+	</script>
 </body>
 
 </html>
