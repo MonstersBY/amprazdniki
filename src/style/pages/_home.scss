@@ -982,9 +982,15 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 }
 
 .home-command {
-    padding: 25rem 0 42.5rem;
-    background: #FFF;
+    // padding: 25rem 0 42.5rem;
+    // background: #FFF;
+	padding-bottom: 20rem;
     overflow: hidden;
+
+	&--white {
+		padding: 25rem 0 42.5rem;
+		background: #FFF;
+	}
     .container {
         position: relative;
     }
@@ -998,10 +1004,23 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		top: auto;
 		right: auto;
 	}
+	&-pagination-other.swiper-pagination-bullets.swiper-pagination-vertical {
+		position: absolute;
+        bottom: -2rem;
+		left: 0;
+		top: auto;
+		right: auto;
+	}
 	&-pagination-number {
 		position: absolute;
 		top: 7rem;
 		right:0;
+
+		&-other {
+			position: absolute;
+			top: 7rem;
+			right:0;
+		}
 	}
     &-btn {
         position: absolute;
@@ -1022,8 +1041,26 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         margin-top: -7rem;
         position: relative;
         z-index: 1;
+
+		&-other {
+			height: 69.6rem;
+			width: 56.6rem;
+			margin: auto;
+			// overflow: hidden;
+			margin-top: -7rem;
+			position: relative;
+			z-index: 1;
+		}
     }
     &-slide {
+
+		&-other {
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
 
         img {
             width: 100%;
@@ -1042,6 +1079,20 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 
 		span {
 			color: rgba(41, 41, 41, 0.50);
+		}
+
+		&-other {
+			overflow: hidden;
+			width: 25rem;
+			text-transform: uppercase;
+			position: absolute;
+			right: 0;
+			bottom: 0rem;
+			text-align: right;
+	
+			span {
+				color: rgba(41, 41, 41, 0.50);
+			}
 		}
     }
     &--text {
@@ -1094,13 +1145,25 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 		&--left, &--right {
 			flex: 1;
 			position: relative;
+
+			&-other {
+				flex: 1;
+				position: relative;
+			}
 		}
 		&--left {
 			cursor: $cursor-left-black;
+			&-other {
+				cursor: $cursor-left-black;
+			}
 		}
 		&--right {
 			cursor: $cursor-right-black;
+			&-other {
+				cursor: $cursor-right-black;
+			}
 		}
+
 	}
     &--next {
         // position: absolute;
@@ -1146,6 +1209,13 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
         //     height: 6.4472rem;
         // }
     }
+	&-buttons-swiper {
+		width: 33.1rem;
+		position: absolute;
+		z-index: 2;
+		bottom: -18rem;
+		left: 33rem;
+	}
 }
 
 .home-holiday {
@@ -1937,9 +2007,12 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
 	}
 
     .home-command {
-        padding: 26rem 0;
-        background: #FFF;
+        padding: 0;
         overflow: hidden;
+
+		&--white {
+			padding: 26rem 0;
+		}
         .container {
             position: relative;
         }
@@ -1949,6 +2022,25 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             margin-bottom: 15.52rem;
         }
         &-pagination.swiper-pagination-bullets.swiper-pagination-vertical {
+            position: static;
+            transform: unset;
+            bottom: auto;
+            left: auto;
+            top: auto;
+            right: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+            width: fit-content;
+            margin: 0 auto 9.6rem;
+            
+            .swiper-pagination-bullet {
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+            }
+        }
+		&-pagination-other.swiper-pagination-bullets.swiper-pagination-vertical {
             position: static;
             transform: unset;
             bottom: auto;
@@ -1986,8 +2078,31 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
                 border-radius: 50%;
             }
         }
+		&-pagination-other.swiper-pagination-bullets.swiper-pagination-horizontal {
+            position: static;
+            transform: unset;
+            bottom: auto;
+            left: auto;
+            top: auto;
+            right: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+            width: fit-content;
+            margin: 0 auto 9.6rem;
+            
+            .swiper-pagination-bullet {
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: 50%;
+            }
+        }
         &-pagination-number {
             display: none;
+
+			&-other {
+				display: none;
+			}
         }
         &-btn {
             position: relative;
@@ -2009,6 +2124,17 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             margin-bottom: 12.2rem;
             position: relative;
             z-index: 1;
+
+			&-other {
+				height: 65.2rem;
+				width: 53.2rem;
+				margin: auto;
+				// overflow: hidden;
+				margin-top: 0;
+				margin-bottom: 12.2rem;
+				position: relative;
+				z-index: 1;
+			}
         }
         &-slide {
     
@@ -2023,6 +2149,13 @@ $cursor-right-white: url(../../assets/images/icon/cursor-right-white.svg), auto;
             position: static;
             text-align: center;
             margin-bottom: 6.4rem;
+
+			&-other {
+				width: 100%;
+				position: static;
+				text-align: center;
+				margin-bottom: 6.4rem;
+			}
         }
         &--text {
             display: flex;
