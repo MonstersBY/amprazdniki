@@ -311,13 +311,17 @@
 	&__img {
 		height: 72rem;
 		overflow: hidden;
-		width: 100%;
 		margin-bottom: 2rem;
+		position: relative;
+  		background: #f7f7f7;
 
 		img {
-			width: 100%;
+			width: auto;
 			height: 100%;
 			object-fit: cover;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 	// .program-character__separat
