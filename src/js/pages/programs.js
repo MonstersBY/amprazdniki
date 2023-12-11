@@ -111,6 +111,23 @@ if($('.programs-show-slide').length) {
         programsShow();
     });
 }
+$(document).ready(function () {
+    function resizeImg() {
+        if (screen.width < 769) {
+            if($('.detail_show-baner--title').length) {
+                    $('.detail_show-baner--title').height()
+                    $('.detail_show-baner--list').css('top', $('.detail_show-baner--title').height() + 30)
+            }
+        } else {
+            $('.detail_show-baner--list').css('top', 'auto')
+        }
+    }
+
+    resizeImg()
+    $(window).resize(function () {
+        resizeImg()
+    });
+})
 // if($('.review-photo-modal').length) {
 //     $('.review-photo-modal').each(function (id_modal) {
 //         // $(this).find('.review-item__img').find('img').each(function (id) {

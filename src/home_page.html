@@ -799,7 +799,7 @@
 		</div>
 		<div class="review-photo-modal review-photo-modal--main" id="photo-modal">
 			<div class="review-photo-modal--main-container">
-				<video>
+				<video controls>
 					<source src="./assets/maxwell.mp4" type="video/mp4">
 				</video>
 				<div class="review-photo-modal--title">праздник <br>для регины тодоренко</div>
@@ -1363,6 +1363,14 @@
   <path fill-rule="evenodd" clip-rule="evenodd" d="M34.0992 32.4077C34.0992 32.0635 33.8202 31.7844 33.476 31.7844L0.998929 31.7844C0.654696 31.7844 0.375641 32.0635 0.37564 32.4077C0.375641 32.7519 0.654696 33.031 0.998929 33.031L33.476 33.031C33.8202 33.031 34.0992 32.7519 34.0992 32.4077Z" fill="#292929"/>
   <path fill-rule="evenodd" clip-rule="evenodd" d="M33.9167 32.8484C34.1601 32.605 34.1601 32.2104 33.9167 31.967L19.5097 17.56C19.2663 17.3166 18.8717 17.3166 18.6283 17.56C18.3849 17.8034 18.3849 18.1981 18.6283 18.4415L32.5945 32.4077L18.6283 46.3739C18.3849 46.6173 18.3849 47.012 18.6283 47.2554C18.8717 47.4988 19.2663 47.4988 19.5097 47.2554L33.9167 32.8484Z" fill="#292929"/>
 </svg>`,
+				},
+			},
+			on: {
+				close: (fancybox, slide) => {
+					var vids = document.getElementsByTagName('video') 
+					for( var i = 0; i < vids.length; i++ ){
+						vids.item(i).pause();
+					}
 				},
 			},
 		});
